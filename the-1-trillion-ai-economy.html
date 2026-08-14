@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The $1 Trillion AI Economy — Kai McKnight</title>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F1EDE3;
+    color: #1a1a1a;
+    font-family: Georgia, "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.65;
+    font-size: 18px;
+  }
+
+  /* ---- Top header (name + decorative toggle) ---- */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 0 20px;
+  }
+  .site-header a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  .toggle {
+    width: 44px;
+    height: 24px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #F1EDE3;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+  }
+
+  /* ---- Fixed Contents sidebar ---- */
+  .toc {
+    position: fixed;
+    top: 110px;
+    left: 40px;
+    width: 260px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  .toc h3 {
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    color: #1a1a1a;
+  }
+  .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .toc li {
+    margin-bottom: 0.7rem;
+  }
+  .toc a {
+    color: #8f8a7e;              /* greyed-out state, like picture 2 */
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: color 0.15s ease;
+  }
+  .toc a:hover {
+    color: #1a1a1a;
+  }
+  .toc a.cc-active {
+    color: #1a1a1a;              /* lit-up state, like picture 3 */
+  }
+
+  /* ---- Essay column ---- */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 100px 20px;
+  }
+  .essay-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 2.5rem 0 1.2rem 0;
+    font-weight: bold;
+  }
+  .essay-subtitle {
+    font-style: italic;
+    font-size: 1.35rem;
+    margin: 0 0 0.6rem 0;
+  }
+  .essay-series {
+    font-size: 1rem;
+    color: #55524a;
+    margin: 0 0 0.4rem 0;
+  }
+  .essay-date {
+    color: #55524a;
+    margin: 1.6rem 0 2.5rem 0;
+  }
+  main h2 {
+    font-size: 1.55rem;
+    margin-top: 3rem;
+    scroll-margin-top: 90px;
+  }
+  main h3 {
+    font-size: 1.15rem;
+    margin-top: 2rem;
+  }
+  main a {
+    color: #1a1a1a;
+  }
+  main blockquote {
+    margin: 1.5rem 0 1.5rem 1.2rem;
+    padding-left: 1rem;
+    border-left: 2px solid #c9c3b4;
+    font-style: italic;
+  }
+  main hr {
+    border: none;
+    border-top: 1px solid #d8d2c2;
+    margin: 3rem 0;
+  }
+  sup {
+    font-size: 0.72em;
+  }
+  sup a {
+    text-decoration: none;
+  }
+  .footnote {
+    font-size: 0.9rem;
+    color: #3a3730;
+    margin-top: 3rem;
+    border-top: 1px solid #d8d2c2;
+    padding-top: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .footnote a {
+    word-break: break-all;
+  }
+
+  /* Hide the sidebar when the window is too narrow for it */
+  @media (max-width: 1220px) {
+    .toc { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html">Kai McKnight</a>
+  <div class="toggle"></div>
+</header>
+
+<nav class="toc" data-toc>
+  <h3>Contents</h3>
+  <ul data-toc-list></ul>
+</nav>
+
+<main data-toc-contents>
+  <h1 class="essay-title">The $1 Trillion AI Economy</h1>
+  <p class="essay-subtitle">If the World Spends $1 Trillion Annually on AI, Where Does the Money Actually Go?</p>
+  <p class="essay-series">Essay I of <em>Who Captures the AI Dollar? — The Economics of the Artificial Intelligence Value Chain</em></p>
+  <p class="essay-date">August 2026</p>
+
+<h2>I. The Trillion-Dollar Paradox</h2>
+<p>Sometime in 2026, the world crossed a threshold that would have sounded absurd five years earlier: annual global investment in artificial intelligence reached approximately one trillion dollars. Goldman Sachs Research, after adjusting the commonly cited hyperscaler capital-expenditure figure for private companies, non-US firms, and non-AI spending, estimates global AI-related investment at roughly $1.019 trillion for 2026, including about $581 billion in the United States, and estimates that cumulative AI investment since 2022 will reach roughly $1.8 trillion by the end of this year.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The bank cross-checked that figure with two independent methods — one tracking gross-profit revisions among AI-exposed listed companies, another built from national accounts and trade data — and all three converged near $1 trillion.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>The number is not an abstraction. The four largest American hyperscalers — Amazon, Microsoft, Alphabet, and Meta — have guided to roughly $725 billion of combined capital expenditure in 2026, up about 77% from an already-record ~$410 billion in 2025, with Amazon alone near $200 billion.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> Goldman now projects some $5.3 trillion of combined capex from those four companies between fiscal 2025 and fiscal 2030.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> The International Energy Agency reports that electricity demand from data centres grew 17% in 2025 — more than five times the growth rate of overall global electricity demand — and projects data-centre consumption to roughly double to about 950 TWh by 2030, approaching the total electricity use of Japan.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> The Bank for International Settlements, an institution not known for excitability, devoted a bulletin in January 2026 to the observation that AI investment has grown so large that it can no longer be funded from operating cash flow alone and is shifting onto debt markets and private credit.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+<p>So the machinery is being built, at industrial scale, with borrowed money, right now. And yet the question this spending is supposed to answer remains strangely under-examined:</p>
+<p><strong>What future economics justify the buildout?</strong></p>
+<p>Nearly $1 trillion per year is being spent to construct the productive capacity of an industry whose end-market — the actual annual spending by customers on AI products and services — remains a small fraction of that figure. The two most valuable pure-play AI companies in the world, OpenAI and Anthropic, reported combined annualized revenue run rates measured in tens of billions of dollars in 2026 — extraordinary growth, but still an order of magnitude below the annual investment being made on the assumption that this demand will keep compounding.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> OpenAI&rsquo;s leaked audited 2025 financials, reported by the Financial Times, showed roughly $13 billion of booked revenue against an operating loss of about $21 billion.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+<p>That gap — trillion-dollar investment against a much smaller, faster-growing, still-unprofitable-in-places revenue base — is the tension this essay lives inside. It is not, by itself, evidence of a bubble. Railroads, electrification, and the internet all had periods when capital formation ran far ahead of monetization, and in each case the technology ultimately transformed the economy. But in each of those cases, the companies that built the infrastructure and the companies that eventually captured the enduring economic value were frequently not the same companies. The buildout being rational for <em>society</em> has never guaranteed it was profitable for the <em>builders</em>.</p>
+<p>So this essay poses a thought experiment and then takes it seriously:</p>
+<blockquote>
+<p><strong>Assume AI eventually becomes a $1 trillion annual end-market — that customers, businesses, and governments come to spend $1 trillion per year on AI-enabled products and services. For every dollar a customer spends, which participants in the value chain receive that dollar as revenue — and, far more importantly, which participants ultimately retain the most economic value?</strong></p>
+</blockquote>
+<p>Note what the question is not. It is not &ldquo;which AI company will be biggest?&rdquo; Bigness — revenue — is the shallowest possible measure of economic success, as Section III will make painfully concrete. The real questions stack on top of each other:</p>
+<ul>
+<li>Who receives the revenue?</li>
+<li>Who keeps the gross profit after direct costs?</li>
+<li>Who converts profit into free cash flow after the enormous capital expenditures this industry requires?</li>
+<li>Who earns returns on invested capital above the cost of that capital?</li>
+<li>Who possesses durable pricing power — the ability to charge more than competition would ordinarily allow, and to keep doing it?</li>
+<li>And therefore: <strong>who captures economic rent?</strong></li>
+</ul>
+<p>A company can rank first on the first question and last on the last one. Much of the confusion in public discussion of AI economics comes from treating these six questions as one question.</p>
+<p>This essay does not answer where the rent will finally settle — nobody honestly can yet, and Section XXVII explains why pretending otherwise would be malpractice. What it does is build the analytical machine: the definitions, the map of the value chain, the two accounting frameworks needed to trace a dollar without double-counting it, a scorecard for grading each layer, four internally consistent scenarios for how the $1 trillion could be divided, and explicit criteria for what would prove the whole framework wrong. Subsequent essays in this series will run each layer of the AI economy — silicon, power, data centers, models, applications, agents — through the machine built here.</p>
+<p>One framing to hold throughout. Most discussion of AI asks: <em>how big will it become?</em> This series asks a different question: <strong>once it becomes enormous, where in the system does the economic value actually remain — who gets paid, who keeps the cash, who earns returns above the cost of capital, and why won&rsquo;t competition take those returns away?</strong></p>
+<hr />
+<h2>II. Two Very Different Trillion-Dollar Economies</h2>
+<p>Before anything else, a confusion must be surgically removed, because it corrupts most popular analysis of AI economics.</p>
+<p>There are <strong>two</strong> trillion-dollar numbers in this essay, and they measure completely different things.</p>
+<h3>Trillion #1: AI investment (real, happening now)</h3>
+<p>Goldman&rsquo;s ~$1 trillion figure for 2026 is <strong>capital formation</strong> — money spent building AI&rsquo;s productive capacity.<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> It buys:</p>
+<p>GPUs and custom accelerators; servers and racks; networking gear and fiber; land; data-center shells, cooling, and electrical plant; transformers and grid interconnections; semiconductor fabrication capacity and the lithography equipment inside it; high-bandwidth memory; power generation. It is the AI economy&rsquo;s equivalent of laying track, stringing wire, and pouring foundations.</p>
+<p>This money is real, it is being spent this year, and its sources are traceable: hyperscaler operating cash flow, more than $100 billion of hyperscaler bond issuance in 2025 alone, and a rapidly growing wedge of private credit and off-balance-sheet vehicles.<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<h3>Trillion #2: AI end-market expenditure (hypothetical, the subject of this essay)</h3>
+<p>The &ldquo;$1 trillion AI economy&rdquo; in this essay&rsquo;s title is a <strong>thought experiment about demand</strong>: a future in which end customers — consumers, enterprises, governments — spend $1 trillion per year on AI-enabled output. A ChatGPT or Claude subscription. An enterprise AI contract. Metered API inference. AI coding tools. An autonomous agent doing paralegal work. AI capability bundled into existing software. AI-produced advertising, legal review, medical triage, engineering drawings.</p>
+<p>We are nowhere near this figure today. Even the most explosive revenue trajectories in the industry — Anthropic&rsquo;s reported climb from roughly $1 billion to tens of billions of dollars of annualized run-rate revenue in under two years, OpenAI&rsquo;s run rate in the mid-twenty-billions — sum, across the whole model layer, to a small fraction of a trillion dollars of end demand.<sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup><sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<h3>Why confusing them produces bad analysis</h3>
+<p>Conflating the two numbers generates two symmetrical errors.</p>
+<p>The first error treats the investment trillion as if it were revenue: <em>&ldquo;AI is already a trillion-dollar industry.&rdquo;</em> It is not. A trillion dollars of capex is a trillion dollars of <strong>cost</strong>, incurred in anticipation of revenue that does not yet exist at that scale. Counting the construction of a factory as the sale of its output is how railway manias are made.</p>
+<p>The second error runs the other way: assuming that $1 trillion of investment implies $1 trillion of eventual annual revenue, as though capital formation mechanically calls demand into being. It does not. Capacity that is built but under-monetized becomes depreciation, write-downs, and distressed assets — the fiber glut of 2001 is the canonical example, where the infrastructure was eventually used, profitably, by companies that bought it for cents on the dollar from the companies that built it.</p>
+<p>The correct relationship between the two trillions is a causal chain, every link of which can fail:</p>
+<p><strong>Investment → productive capacity → utilization → revenue → operating profit → free cash flow → return on invested capital.</strong></p>
+<p>Investment builds the machine. Revenue determines whether building the machine was worthwhile. And the arithmetic connecting them is demanding. Consider a rough, deliberately simplified sizing exercise — labeled clearly as an illustration, not a forecast. Suppose the industry deploys $2 trillion of cumulative AI-specific capital by the late 2020s (Goldman&rsquo;s cumulative estimate already reaches $1.8 trillion by end-2026, with capex still accelerating<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>). Suppose that capital depreciates economically over roughly five to six years — a plausible blend of short-lived accelerators and longer-lived buildings and power infrastructure. Annual depreciation alone then runs on the order of $350–400 billion. Add electricity, staffing, networking, and maintenance, and the annual <em>cost</em> of operating the installed base plausibly approaches half a trillion dollars before anyone earns a profit. For the buildout to clear a reasonable cost of capital — say, high single digits to 10% on the invested base — the revenue ultimately supported by this capacity has to be very large indeed: plausibly $600 billion to $1 trillion or more per year, at healthy margins, sustained. The industry&rsquo;s own behavior implies its leaders believe this revenue is coming. The BIS&rsquo;s observation that equity markets are pricing a dramatically more optimistic future than debt markets are underscores that not everyone financing the buildout shares the same conviction.<sup id="fnref3:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+<p>This essay does not resolve whether the conviction is justified. It builds the framework for judging where the money lands if it is.</p>
+<hr />
+<h2>III. What Does &ldquo;Capture&rdquo; Actually Mean?</h2>
+<p>&ldquo;Who gets the money?&rdquo; sounds like one question. It is at least six, and they can produce six different winners. This section defines the vocabulary the entire series will use, because without it every subsequent argument collapses into ambiguity.</p>
+<h3>3.1 Revenue</h3>
+<p>Revenue is what customers pay a company. It is the most visible metric and the least informative one. A company can book $100 billion of revenue and destroy shareholder value doing it; airlines did so for decades. Revenue tells you a company sits somewhere in the flow of money. It tells you nothing about whether any of that money sticks.</p>
+<h3>3.2 Gross profit</h3>
+<p>Revenue minus the direct cost of producing what was sold — for a chipmaker, wafers and packaging; for a cloud provider, largely depreciation on servers plus electricity; for a model company, the compute burned serving each request. Gross margin is the first honest signal of value capture. NVIDIA&rsquo;s roughly 75% GAAP gross margins in recent quarters mean that of every dollar a customer pays for its data-center systems, about 75 cents survives the direct cost of making them — an extraordinary figure for hardware, and the single clearest evidence of where pricing power currently sits in the AI stack.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> TSMC&rsquo;s gross margin reached 67.7% in Q2 2026.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> By contrast, OpenAI&rsquo;s leaked 2025 financials imply that after compute costs, far less of each revenue dollar survived — the company posted a $20.9 billion operating loss on $13 billion of booked revenue.<sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup> Same industry, radically different unit economics.</p>
+<h3>3.3 Operating profit</h3>
+<p>What remains after the additional costs of running the company — R&amp;D, sales, administration. For AI companies R&amp;D is enormous and, critically, <em>recurring</em>: frontier-model training is less like building a factory once and more like rebuilding it every year, larger.</p>
+<h3>3.4 Free cash flow</h3>
+<p>Operating cash flow minus capital expenditures:</p>
+<p><strong>FCF = Operating Cash Flow − Capex</strong></p>
+<p>This is where AI economics get brutal, because the industry&rsquo;s capital expenditures are so large that they can swallow even spectacular operating profits. In early 2026, analysts projected that Amazon&rsquo;s free cash flow would turn <em>negative</em> for the year as its capex approached $200 billion — a company generating vast operating cash, spending more than all of it.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup> The BIS notes that hyperscaler free cash flow has recently lagged capex in absolute dollar terms.<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup> Accounting profit that never becomes distributable cash is a promise, not a result.</p>
+<h3>3.5 Return on invested capital</h3>
+<p>Now the decisive question: how much after-tax operating profit does a business generate <em>relative to the capital required to produce it</em>?</p>
+<p><strong>ROIC = After-tax operating profit ÷ Invested capital</strong></p>
+<p>ROIC is what allows comparison across businesses that look nothing alike. A worked hypothetical:</p>
+<p><strong>Company A</strong> — $100B revenue, $20B after-tax operating profit, $300B of invested capital. ROIC ≈ 6.7%.</p>
+<p><strong>Company B</strong> — $30B revenue, $12B after-tax operating profit, $25B of invested capital. ROIC ≈ 48%.</p>
+<p>Company A is more than three times larger by revenue and generates two-thirds more absolute profit. Company B is, by any economic standard, the vastly better business — every dollar entrusted to it earns seven times as much. If Company A&rsquo;s cost of capital is 8%, Company A is <em>destroying</em> value with every incremental dollar it invests, at $100 billion of revenue. The AI stack contains real companies resembling both profiles, sometimes inside the same corporation.</p>
+<h3>3.6 Economic profit and its master equation</h3>
+<p>Tie ROIC to the cost of capital (WACC — the blended return debt and equity investors require) and you get the relationship this entire series runs on:</p>
+<p><strong>Economic Profit ≈ Invested Capital × (ROIC − WACC)</strong></p>
+<p>A business creates economic value only when ROIC exceeds WACC. Scale amplifies whatever sign that spread has: a huge company earning ROIC below its WACC is a value-destruction machine of huge scale. This equation has known limitations — invested capital is an accounting construct, intangibles are measured badly, single-year snapshots mislead for businesses mid-buildout — and Section XII addresses the most important one for AI (assets that depreciate economically faster than they depreciate on the books). But as a disciplining device it is unmatched, because it forces the question the revenue league tables never ask: <em>at what capital cost was this profit obtained?</em></p>
+<h3>Why the distinctions produce different winners</h3>
+<p>Rank the AI stack by revenue and the hyperscalers dominate. Rank by gross margin and NVIDIA and TSMC dominate. Rank by free cash flow in 2026 and the picture inverts — several of the biggest spenders produce the least distributable cash. Rank by ROIC and asset-light application businesses that barely register on the revenue table may lead. &ldquo;Who captures the AI dollar&rdquo; has a different answer at every line of the income statement, and only the last lines — free cash flow, ROIC over WACC, and the durability of that spread — measure what an owner of capital should care about.</p>
+<hr />
+<h2>IV. Economic Rent: What We Are Actually Hunting</h2>
+<p>One more concept completes the toolkit, and it is the deepest one.</p>
+<p><strong>Economic rent</strong> is the value a company retains <em>above</em> what would normally be necessary to keep capital and competition in the business. Intuitively:</p>
+<blockquote>
+<p><strong>Who can charge more than competition would ordinarily allow — and keep doing it?</strong></p>
+</blockquote>
+<p>A normal competitive business earns roughly its cost of capital over time, because any excess return attracts entrants who compete it away. That is not failure; it is what markets are supposed to do. Rent is what survives <em>despite</em> that mechanism — and it always requires some structural explanation for why the profits are not competed away. Candidate mechanisms in the AI economy:</p>
+<ul>
+<li><strong>Scarcity</strong> — leading-edge fabrication capacity, grid interconnections, advanced packaging, HBM supply</li>
+<li><strong>Intellectual property and accumulated know-how</strong> — ASML&rsquo;s EUV monopoly; TSMC&rsquo;s process leadership</li>
+<li><strong>Ecosystem lock-in and switching costs</strong> — CUDA; enterprise workflows embedded in an application</li>
+<li><strong>Network effects</strong> — platforms whose value grows with users</li>
+<li><strong>Economies of scale</strong> — training-cost amortization across a huge inference base</li>
+<li><strong>Proprietary data and context</strong> — the customer&rsquo;s own accumulated history inside a product</li>
+<li><strong>Distribution and customer ownership</strong> — the default assistant on a billion devices</li>
+<li><strong>Physical bottlenecks</strong> — power, land, transformers, construction capacity</li>
+<li><strong>Regulation</strong> — compliance moats in healthcare, finance, defense</li>
+<li><strong>Brand and trust</strong> — which matters more, not less, when the product is judgment</li>
+</ul>
+<p>The essay&rsquo;s guiding metaphor: the AI economy will have <strong>tollbooths</strong> — points every dollar must pass through where the operator can extract a fee competition cannot immediately undercut. NVIDIA&rsquo;s mid-70s gross margins are today&rsquo;s most visible tollbooth.<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup> The series&rsquo; central task is determining which tollbooths are permanent features of the landscape and which are temporary traffic jams that look like tollbooths.</p>
+<p>The critical discipline: extraordinary profits are an <em>invitation</em> to competition. Every high-margin layer in the AI stack is currently being attacked — custom silicon against merchant GPUs, open-weight models against proprietary ones, hyperscaler clouds against each other, applications against the model providers beneath them who could replicate their features. Sustainable rent requires a mechanism that repels this attack. Where no such mechanism can be articulated, high current margins should be read as a forecast of their own decline.</p>
+<hr />
+<h2>V. Mapping the AI Economy</h2>
+<p>Now the machine itself. The AI value chain is best understood as three broad levels, each answering a different question.</p>
+<h3>THE PHYSICAL LAYER — <em>Who builds the intelligence?</em></h3>
+<p><strong>Energy generation</strong> → <strong>Grid / transmission</strong> → <strong>Data-center infrastructure</strong> → <strong>Semiconductor equipment</strong> → <strong>Semiconductor fabrication</strong> → <strong>Memory / advanced packaging / networking</strong> → <strong>GPUs and AI accelerators</strong></p>
+<p>This layer converts capital and electricity into computational capacity. Its economic character is heavy industry: multi-year construction timelines, enormous fixed costs, physical constraints. Its participants include utilities and independent power producers; grid operators; data-center developers and REITs; ASML (whose extreme-ultraviolet lithography machines are the sole means of producing leading-edge chips); TSMC (which fabricates essentially all leading-edge AI accelerators, with advanced nodes now ~74% of its wafer revenue<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>); SK Hynix, Micron, and Samsung in high-bandwidth memory; Broadcom in custom accelerators and networking; and NVIDIA and AMD in merchant GPUs. What each participant must purchase: the layer below it. What it requires: staggering capital — TSMC alone is spending $60–64 billion on capex in 2026 and has pledged a further $100 billion for US fabs.<sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">13</a></sup><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+<h3>THE INTELLIGENCE LAYER — <em>Who produces the intelligence?</em></h3>
+<p><strong>Cloud / compute infrastructure</strong> → <strong>Training</strong> → <strong>Foundation models</strong> → <strong>Inference</strong></p>
+<p>This layer converts computational capacity into capability. Hyperscalers (AWS, Azure, Google Cloud, Oracle, and neoclouds like CoreWeave) aggregate hardware into rentable compute. Model developers (OpenAI, Anthropic, Google DeepMind, Meta, xAI, and open-weight developers such as DeepSeek and Mistral) burn that compute in training runs to produce models, then burn more of it serving inference. The layer&rsquo;s defining economic feature is a cost structure split between a gigantic, recurring, upfront fixed cost (training) and a metered marginal cost (inference) — Section X shows why these are effectively two different economies.</p>
+<h3>THE ECONOMIC APPLICATION LAYER — <em>Who monetizes the intelligence?</em></h3>
+<p><strong>AI platforms / tools</strong> → <strong>Applications</strong> → <strong>Agents</strong> → <strong>Enterprise workflows</strong> → <strong>Consumers and businesses</strong> → <strong>Economically useful output</strong></p>
+<p>This layer converts capability into things people pay for: coding assistants, customer-service systems, document analysis, design tools, vertical software for law, medicine, and finance, and increasingly autonomous agents executing multi-step work. Its participants range from the model companies&rsquo; own consumer products (ChatGPT, Claude) through independent application companies to every incumbent software vendor bolting AI into an existing product. Its economics are classically software-like — low marginal cost, high potential gross margin — <em>except</em> that its cost of goods sold is the layer above it: inference, purchased from the intelligence layer. The application layer&rsquo;s margin is therefore a direct function of a price set by its own potential competitors, a structurally uncomfortable position examined in the scenarios of Section XX.</p>
+<p>Three questions, one per layer, organize everything that follows: who builds it, who produces it, who monetizes it — and at which of the three does the dollar <em>stop</em>?</p>
+<p><em>(Figure 1, conceptual: the three-layer value chain as a vertical stack, physical at the base, application at the top, with the customer&rsquo;s dollar entering from above.)</em></p>
+<hr />
+<h2>VI. Why the AI Dollar Does Not Literally Flow Down the Stack</h2>
+<p>The three-layer map invites a seductive mistake: imagining the customer&rsquo;s dollar as a physical object handed down the chain — 30 cents to the application, 25 to the model, 20 to the cloud, 15 to NVIDIA, 10 to TSMC — until it reaches a power plant. Real AI economics do not work that way, for at least five reasons, and getting this right is what separates analysis from infographics.</p>
+<p><strong>Timing mismatches.</strong> A hyperscaler buys accelerators in 2025 and 2026 for customers who may not pay for AI applications until 2028. The purchase is capex today; it reaches the income statement as depreciation spread over four to six years. The electricity is bought continuously; the customer pays monthly; the GPU was paid for years earlier with borrowed money. At any moment, the money moving through the system was committed at wildly different times against wildly different expectations.</p>
+<p><strong>Capex versus opex, and the lease disguise.</strong> Whether a company <em>owns</em> its compute (capex, depreciation) or <em>rents</em> it (opex) changes every reported number without changing the underlying economics. The BIS documents how hyperscalers increasingly use special-purpose vehicles and joint ventures that own data-center assets, with the hyperscaler signing long-term leases or capacity offtake agreements — economically a long-term financial commitment, on paper merely rent.<sup id="fnref2:11"><a class="footnote-ref" href="#fn:11">11</a></sup> Moody&rsquo;s has estimated hyperscalers hold roughly $662 billion of signed-but-not-yet-commenced data-center lease commitments sitting off their balance sheets.<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup> An analyst tracing dollar flows through reported financials will simply miss obligations of this size.</p>
+<p><strong>Vertical integration and transfer pricing.</strong> When Google serves a Gemini response on its own TPUs in its own data center powered by its own purchased power agreements, no external transaction occurs at three layers of the stack. The &ldquo;payments&rdquo; between Google-the-cloud and Google-the-model-company are internal transfer prices, invisible and, where visible, arbitrary. Section XIV takes this up in full.</p>
+<p><strong>Prepayments and purchase commitments.</strong> Model companies pre-commit tens of billions of dollars of future compute purchases; hyperscalers pre-commit chip orders and power offtakes years ahead. Money is promised, and sometimes paid, long before the corresponding service exists.</p>
+<p><strong>The double-counting trap.</strong> Most importantly: adding revenues across the stack does not measure the size of the AI economy — it measures the same dollars repeatedly. When an enterprise pays an application company, which pays a model provider, which pays a cloud, which paid NVIDIA, which paid TSMC, summing those five revenue lines counts the original customer dollar something like five times. The $1 trillion end-market hypothetical is $1 trillion of <em>final demand</em>; the gross revenue sloshing through the full chain to serve it would be a substantially larger and analytically meaningless number. Any article that adds NVIDIA&rsquo;s revenue to Microsoft&rsquo;s AI revenue to OpenAI&rsquo;s revenue and announces the size of the AI economy has committed this error.</p>
+<hr />
+<h2>VII. Two Maps, Not One</h2>
+<p>The double-counting problem has a standard solution, borrowed from national accounting, and it requires drawing two different maps of the same economy.</p>
+<h3>Map A — The Revenue Flow Map: who invoices whom?</h3>
+<p>This is the commercial-relationships map. A representative path:</p>
+<p><strong>Enterprise customer</strong> → pays → <strong>application developer</strong> → pays → <strong>model/API provider</strong> → pays → <strong>cloud provider</strong> → which purchases/leases → <strong>accelerators + networking + facilities + power</strong> → whose vendors pay → <strong>fabs, equipment makers, memory suppliers, utilities</strong>.</p>
+<p>Map A answers real questions: who has pricing power over whom; who is whose customer concentration risk; where a price cut at one layer propagates. NVIDIA&rsquo;s revenue concentration among a handful of hyperscaler buyers, or an application company&rsquo;s dependence on a single model API, live on this map. But Map A cannot be summed. Its arrows are gross flows.</p>
+<h3>Map B — The Economic Value-Added Map: who creates what?</h3>
+<p>The second map assigns to each layer only its <strong>value added</strong>:</p>
+<p><strong>Value Added = Output Value − Intermediate Inputs</strong></p>
+<p>This is precisely how GDP is constructed: sum value added across all producers and you get final output exactly once. Applied to AI: TSMC&rsquo;s value added is its revenue minus its purchased materials, equipment depreciation, and inputs; NVIDIA&rsquo;s is its revenue minus what it pays TSMC and its memory suppliers; the cloud&rsquo;s is its revenue minus its hardware depreciation and power; the model company&rsquo;s is its revenue minus its cloud bill; the application&rsquo;s is its revenue minus its inference bill. Sum those and you recover the customer&rsquo;s $1 trillion — once.</p>
+<p>Map B is the map on which &ldquo;who captures the AI dollar&rdquo; can actually be answered, because value added, further decomposed into labor costs, depreciation, and profit, isolates the piece we are hunting: the profit share of each layer&rsquo;s value added, compared against the capital that layer employs. The remainder of this series performs that decomposition layer by layer.</p>
+<p>Two maps, two uses: Map A for power and bargaining, Map B for accounting truth. Confusing them is the root error of most AI-market-sizing you will ever read.</p>
+<p><em>(Figure 2, conceptual: Map A as a directed graph of invoices; Map B as a stacked bar decomposing $1.00 of final demand into value-added slices, drawn deliberately without numbers — assigning percentages today would be false precision.)</em></p>
+<hr />
+<h2>VIII. Who Creates the First Dollar?</h2>
+<p>Every diagram so far has read downward, from customer to power plant. Now invert it, because the entire trillion-dollar edifice rests on a decision made at the very top:</p>
+<blockquote>
+<p><strong>A customer concludes that an AI capability is worth paying for.</strong></p>
+</blockquote>
+<p>Without that judgment, repeated a few hundred billion times a year, everything upstream — the fabs, the gigawatts, the bond issuance — is stranded capital. So the first analytical question is not &ldquo;how good are the models?&rdquo; but &ldquo;what economically valuable output are they producing that somebody will pay for?&rdquo; Capability and willingness-to-pay are different things: models could write sonnets in 2023; sonnets have no budget line.</p>
+<p>Where does demonstrated willingness to pay actually exist in 2026?</p>
+<p><strong>Software development</strong> is the clearest case in the entire economy. Code is text; correctness is partially checkable; developer time is expensive; the work product is digital end to end. AI coding tools became the fastest-scaling product category in the industry — Anthropic&rsquo;s reported revenue surge in 2026 was driven substantially by Claude Code&rsquo;s adoption, and coding assistants achieved paid penetration into enterprises faster than any software category in memory.<sup id="fnref3:9"><a class="footnote-ref" href="#fn:9">9</a></sup> Coding is the proof that when AI output is verifiably useful inside an existing expensive workflow, budgets appear at scale.</p>
+<p><strong>Customer service and support</strong> — high labor cost, high volume, tolerant of imperfection, easily measured. Deflection rates convert directly into dollars.</p>
+<p><strong>Advertising and marketing content</strong> — generation cost collapses against a large existing spend on creative production.</p>
+<p><strong>Search and consumer assistants</strong> — hundreds of millions of users, monetized through subscriptions and, increasingly, the redirection of the existing search-advertising economy.</p>
+<p><strong>Knowledge-work augmentation</strong> — document review, analysis, drafting across law, finance, consulting, medicine. Large, real, but harder to meter: the output is entangled with human judgment, so pricing gravitates toward per-seat software rather than per-outcome value.</p>
+<p><strong>Science, design, logistics, manufacturing, robotics</strong> — the largest long-run prizes and the least monetized today, because the loop from model output to verified physical or scientific value is longest.</p>
+<p>The pattern across these: <strong>AI monetizes fastest where its output is verifiable, digital, and substitutes for something expensive that is already budgeted.</strong> Where output is unverifiable or the budget line does not exist, capability races ahead of revenue. This is why the composition of the eventual $1 trillion matters as much as its size — a trillion dollars of metered, verifiable, workflow-embedded spending supports very different value capture than a trillion dollars of loosely-attached per-seat subscriptions that procurement departments can cancel.</p>
+<hr />
+<h2>IX. The Three Sources of the AI Dollar</h2>
+<p>Where would $1 trillion of annual end-spending actually come <em>from</em>? Every future AI dollar originates in one of three places, and the three imply radically different ceilings and different winners.</p>
+<h3>Source 1: New expenditure</h3>
+<p>Spending that did not exist before — a consumer pays $20/month for an assistant; a researcher pays for capability no human service offered at any price. Genuinely additive to GDP. Probably the smallest of the three sources: consumer wallets are finite, and history suggests new pure-software categories saturate in the low hundreds of billions globally.</p>
+<h3>Source 2: Substitution for existing technology spending</h3>
+<p>Money migrating from existing IT budgets into AI: AI-native software displacing traditional SaaS; AI search displacing search advertising; AI infrastructure displacing conventional servers. Global enterprise software and IT services spending runs well over a trillion dollars annually, so this pool is large — but it is <em>transfer</em>, not creation. Every AI dollar won here is a dollar lost by an incumbent, which is why incumbents are racing to cannibalize themselves before someone else does. Competition for a fixed budget pool tends to compress the margins of everyone fighting over it.</p>
+<h3>Source 3: Substitution for labor</h3>
+<p>The giant. Global compensation of employees is measured in the tens of trillions of dollars; US payrolls alone exceed $11 trillion. If AI systems — especially agents — begin competing not for software budgets but for <strong>payroll budgets</strong>, the addressable pool is an order of magnitude larger than all of IT. An agent costing $10,000 a year performing work that previously required $70,000 of salary changes the ceiling of the AI economy from &ldquo;share of IT spend&rdquo; to &ldquo;share of GDP.&rdquo; Goldman Sachs economists estimate US companies are already spending on the order of $150 billion annually on labor costs tied to the AI transition, and project workforce reorganization costs of $800–900 billion over the full adoption cycle — evidence that the labor channel is not hypothetical, and that it is expensive to traverse.<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup></p>
+<p>Two disciplining notes, and then this topic is deliberately parked. First, labor substitution is the hardest source to capture: it requires reliability, integration, accountability, and trust that current systems only partially deliver, and the pricing question — does the AI supplier capture the $60,000 of savings, or does competition hand it to the customer? — is exactly the surplus-division problem of Section XVII. Second, this series reserves the full analysis for the later essay <em>The Agent Economy</em>. Here it suffices to establish the taxonomy: <strong>new money, redirected IT money, redirected payroll money</strong> — and the observation that only the third source makes the $1 trillion hypothetical look conservative rather than ambitious.</p>
+<hr />
+<h2>X. Training and Inference Are Different Economies</h2>
+<p>Inside the intelligence layer sit two activities so economically distinct that treating &ldquo;AI compute&rdquo; as one market obscures more than it reveals.</p>
+<p><strong>Training</strong> builds capability: a gigantic, discrete, upfront computation producing an asset — the model. Frontier training runs consume months of time on clusters costing billions of dollars, and the expenditure recurs, because the frontier moves. Leaked projections reported by the Wall Street Journal put OpenAI&rsquo;s training-related spending on a path toward roughly $125 billion per year by 2030, against Anthropic&rsquo;s projected ~$30 billion for the same period — a four-fold difference in the cost of staying at the frontier that may prove one of the most consequential strategic divergences in the industry.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup> Training is economically analogous to drug development or semiconductor process R&amp;D: enormous fixed cost, uncertain payoff, amortized across whatever demand the resulting asset can serve.</p>
+<p><strong>Inference</strong> uses capability: every prompt answered, every line of code generated, every agent step executed consumes compute at the moment of use. Inference is metered, continuous, and scales with demand rather than ambition. Its unit costs are governed by a fast-moving stack of engineering levers — batching, caching, quantization, distillation, speculative decoding, specialized serving hardware, longer-lived deployment of older accelerators — which together have driven the price per token of a given capability level down by orders of magnitude within just a few years. The IEA makes the physical version of the same observation: power consumption per AI task is declining at a rate it calls unprecedented in energy history, even as total consumption soars because usage grows faster still.<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup></p>
+<p>The economic distinction that matters for value capture:</p>
+<p><strong>Training is a fixed cost. Inference is a marginal cost.</strong> A business dominated by fixed costs rewards scale and concentrates — only a handful of organizations can pay the frontier&rsquo;s entry fee, and each customer added spreads the training cost thinner. A business dominated by marginal costs behaves like a commodity utility unless something differentiates the units — and a token is dangerously close to a fungible unit.</p>
+<p>The composition of the industry is visibly shifting along this axis. NVIDIA&rsquo;s management and hyperscaler earnings calls through 2026 describe inference and agentic workloads as the accelerating driver of demand; Goldman Sachs Research identifies broadening enterprise deployment and surging token consumption as the force reshaping infrastructure needs.<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup> The mature AI economy, if it arrives, is predominantly an <em>inference</em> economy: an economy of operating enormous numbers of already-capable models, not primarily of building ever-larger ones.</p>
+<p>Which reframes the value-capture question sharply:</p>
+<blockquote>
+<p><strong>In a mature inference economy, is the scarce thing the intelligence itself, or the capacity to serve it?</strong></p>
+</blockquote>
+<p>If frontier models stay strongly differentiated, training&rsquo;s fixed-cost structure grants the few frontier labs pricing power over every token served — Scenario B of Section XX. If capability converges and tokens commoditize, value drains out of the model layer toward whoever controls serving capacity, distribution, or the customer — Scenarios A and C. The training/inference split is thus not a technical footnote; it is the hinge on which the intelligence layer&rsquo;s share of the trillion dollars turns.</p>
+<hr />
+<h2>XI. AI Is Software Built on Heavy Industry</h2>
+<p>Follow one AI response backward through everything that had to exist for it to appear:</p>
+<p><strong>A useful answer</strong> ← inference on a served model ← accelerators executing it ← servers and racks housing them ← networking binding thousands of chips into one computer ← cooling removing the heat ← a data center enclosing all of it ← electricity feeding it continuously ← generation, transmission, and grid interconnection delivering that electricity ← fuel, turbines, panels, and transformers producing it.</p>
+<p>Every link is physical. The IEA&rsquo;s numbers give the chain its scale: data-centre electricity consumption grew 17% in 2025 to roughly 485 TWh, is projected to roughly double to ~950 TWh by 2030 — about 3% of global electricity demand, comparable to Japan&rsquo;s entire consumption — and the AI-focused portion is set to triple.<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup> In the United States, data centers are on course to consume more electricity than the production of aluminum, steel, cement, and chemicals combined by 2030.<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup> Electricity generation to supply data centres is projected to grow from 460 TWh in 2024 to over 1,000 TWh in 2030.<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> Meanwhile the IEA documents tightening supply chains for gas turbines and transformers, multi-year grid-interconnection queues, and developers resorting to onsite gas generation because the grid cannot connect them fast enough.<sup id="fnref2:21"><a class="footnote-ref" href="#fn:21">21</a></sup></p>
+<p>Hold this against the industry&rsquo;s self-image. Software&rsquo;s defining economic property — the reason it produced history&rsquo;s best business models — is near-zero marginal cost: write once, sell infinitely. AI breaks that property. Every marginal unit of AI output has a real, physical, metered cost in silicon-time and joules. The correct formulation, and one of this essay&rsquo;s central claims:</p>
+<blockquote>
+<p><strong>AI is simultaneously a software industry and a heavy-industrial system — software economics stacked on top of infrastructure economics.</strong></p>
+</blockquote>
+<p>The contradiction is productive to sit with. The layers of the stack sort themselves by which set of economics dominates them. TSMC and the utilities live almost entirely in heavy industry: decade-long asset lives, regulated or quasi-regulated returns, physical constraints. The application layer lives almost entirely in software: its marginal cost is an API bill. The middle layers — clouds and model companies — are hybrids, and their hybrid nature is precisely why their economics are so contested: they present software-style products (an API, a subscription) built on industrial-style cost structures (depreciating billion-dollar clusters, power contracts). A subscription business whose COGS is a power plant behaves like neither a subscription business nor a power plant.</p>
+<p>The strategic consequence: the physical layer imposes a <em>floor</em> under the price of intelligence (someone must pay for the joules and the silicon) and a <em>ceiling</em> on its growth rate (capacity expands at construction speed, not software speed). Both the floor and the ceiling are contested territory — and where physical constraint binds hardest, Section XV argues, is exactly where rent temporarily pools.</p>
+<hr />
+<h2>XII. Capital Intensity Changes the Investment Question</h2>
+<p>The heavy-industry half of AI&rsquo;s nature has a financial signature: capital intensity so extreme it inverts normal software analysis.</p>
+<p>Start with the observed numbers. Hyperscaler capex: ~$725 billion guided for 2026 across the big four, up 77% year over year, on top of ~$410 billion in 2025.<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> Goldman&rsquo;s augmented measure: ~$1.019 trillion of global AI investment in 2026, 1.8% of US GDP rising toward a projected 2.8% by 2028.<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup> TSMC: $60–64 billion of 2026 capex against ~$160 billion of expected revenue.<sup id="fnref3:13"><a class="footnote-ref" href="#fn:13">13</a></sup> The consequences are already visible in cash-flow statements: analysts projected Amazon&rsquo;s company-wide free cash flow to go negative in 2026, and the BIS observes hyperscaler FCF lagging capex in absolute terms across the group.<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref2:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p>Three analytical points convert these numbers into judgment.</p>
+<p><strong>First: depreciation is a forecast, and AI&rsquo;s may be optimistic.</strong> Accelerators are commonly depreciated over five to six years. Their <em>economic</em> life — the period they remain competitive for frontier workloads — may be materially shorter, given annual hardware cadences and rapid efficiency gains, though older chips do find second lives in inference. If economic lives are shorter than accounting lives, current reported earnings across the cloud layer are overstated, and the true capital cost of the AI economy is higher than the income statements admit. This single accounting judgment — GPU useful life — may move reported hyperscaler profits by tens of billions of dollars, and it is a management estimate, not a fact.</p>
+<p><strong>Second: the revenue bar implied by the capital base is enormous.</strong> Repeat Section II&rsquo;s arithmetic with the observed trajectory: if cumulative AI investment reaches $1.8 trillion by end-2026 and continues at anything like current guidance,<sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup> the installed base entering the late 2020s plausibly represents $3–4 trillion of gross investment. Even at a blended 15% annual economic depreciation, that is $450–600 billion per year of capital consumption before power, people, or profit. Infrastructure revenue must clear that bar merely for the buildout to tread water; clearing WACC on top requires substantially more. The industry&rsquo;s most explosive revenue stories — model-layer run rates in the tens of billions — are necessary but not yet remotely sufficient against this denominator.</p>
+<p><strong>Third: revenue growth and value creation can diverge for years.</strong> A hyperscaler can report accelerating cloud growth every quarter while its <em>incremental</em> ROIC — profit earned on each new dollar invested — deteriorates, if the new dollars buy capacity priced competitively down toward cost. The master equation, Economic Profit ≈ Invested Capital × (ROIC − WACC), is unforgiving here: growing invested capital while the spread compresses can shrink economic profit even as every headline number grows. The market&rsquo;s periodic sell-offs after strong hyperscaler earnings accompanied by raised capex guidance are, in effect, investors repricing exactly this risk.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref3:14"><a class="footnote-ref" href="#fn:14">14</a></sup></p>
+<p>None of this proves the buildout is irrational. It proves the buildout is a <em>levered bet on future demand and future pricing</em> — and Section XIII examines who, precisely, is holding the lever.</p>
+<hr />
+<h2>XIII. Who Finances the AI Economy?</h2>
+<p>Before anyone captures an AI dollar, somebody must finance the machinery that produces it — and the financing structure of the AI boom changed character between 2024 and 2026 in ways that create a second, parallel value chain.</p>
+<p>The sources of capital, in rough order of seniority of appearance:</p>
+<p><strong>Retained earnings</strong> funded the first phase: hyperscalers redirected the vast operating cash flows of search, e-commerce, and legacy cloud into GPUs. This is the healthiest possible funding — no external claims created. It is no longer sufficient. The BIS&rsquo;s January 2026 bulletin states the shift plainly: anticipated investment needs now require firms to move from operating cash flow to debt, with private credit playing a rapidly increasing role.<sup id="fnref4:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+<p><strong>Public bond markets</strong>: hyperscaler gross issuance topped $100 billion in 2025, mostly long-maturity paper locking in funding for multi-year buildouts — and credit-default-swap spreads on hyperscaler debt widened as supply grew and payoff uncertainty registered.<sup id="fnref3:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p><strong>Off-balance-sheet structures</strong>: the BIS documents the now-standard architecture — a special-purpose vehicle or joint venture, capitalized by a sponsor consortium, raises private-placement debt to build data centers; the hyperscaler takes a minority stake, signs long-term leases or capacity offtake agreements, and may extend guarantees. Economically a long-duration financial commitment; optically, rent.<sup id="fnref4:11"><a class="footnote-ref" href="#fn:11">11</a></sup> Moody&rsquo;s estimate of ~$662 billion in signed-but-not-commenced lease commitments across the hyperscalers gauges the scale of obligation living outside the balance sheets.<sup id="fnref2:18"><a class="footnote-ref" href="#fn:18">18</a></sup></p>
+<p><strong>Private credit</strong>: originations to AI-related companies exceeded $40 billion in 2025 — a roughly fivefold jump — with BIS-linked estimates of $300–600 billion outstanding by 2030, channeled through funds and insurers that carry no bank-style capital requirements.<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup></p>
+<p><strong>Circular and vendor-adjacent financing</strong>: chipmakers and hyperscalers taking equity stakes in model companies that commit to buying their compute — structures the BIS flags because they can make demand and supply mutually self-referential.<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> OpenAI&rsquo;s 2026 funding round, with major commitments from Amazon and NVIDIA — its suppliers — is the marquee example of capital and commerce intertwining.<sup id="fnref3:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+<p>Now the analytical payoff. This financing architecture means there are <strong>two AI value chains</strong>, not one:</p>
+<ul>
+<li>The <strong>operating value chain</strong>: who earns from <em>producing</em> AI — the subject of the rest of this essay.</li>
+<li>The <strong>financing value chain</strong>: who earns from <em>funding</em> the production of AI — bondholders, private-credit funds, SPV equity sponsors, infrastructure investors, lessors.</li>
+</ul>
+<p>The two chains can have different winners. If AI demand arrives as hoped, operators capture the upside and financiers earn their contracted coupon — fine returns, nothing more. If demand disappoints, the ordering inverts: leases and offtakes are senior claims that must be paid before equity earns anything, so financiers can achieve their expected returns while operating shareholders absorb the miss — up to the point where the miss is large enough to breach the contracts, at which point the losses land on lenders with less transparency and less regulatory cushion than banks, which is precisely the BIS&rsquo;s stated concern.<sup id="fnref5:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref2:26"><a class="footnote-ref" href="#fn:26">26</a></sup> And the BIS&rsquo;s sharpest single observation deserves restating: equity markets are pricing a dramatically better AI future than debt markets are pricing for the same companies.<sup id="fnref6:7"><a class="footnote-ref" href="#fn:7">7</a></sup> Somebody&rsquo;s discount rate is wrong. This series returns to the financing chain in a later essay; for now, the essential point is that &ldquo;who captures the AI dollar&rdquo; has a creditor&rsquo;s answer as well as an operator&rsquo;s answer, and in downside scenarios the creditor&rsquo;s answer dominates.</p>
+<hr />
+<h2>XIV. Vertical Integration Complicates Everything</h2>
+<p>The layered map implies distinct companies at each layer, transacting at market prices. Increasingly, the opposite is true, and it breaks naive layer analysis in ways worth making explicit.</p>
+<p>Consider what a single hyperscaler may simultaneously own: data centers and the land under them; long-term power purchase agreements; custom accelerators (Google&rsquo;s TPUs, Amazon&rsquo;s Trainium, Microsoft&rsquo;s Maia, Meta&rsquo;s MTIA); the cloud platform; a frontier model or a multi-billion-dollar stake in one; consumer and enterprise applications; and distribution to billions of users. Google can serve a Gemini answer without a single external transaction above the fab. The model companies are integrating in the other direction: Anthropic&rsquo;s compute agreements span Google TPUs, AWS Trainium, and NVIDIA hardware, with a Broadcom partnership for roughly 3.5 gigawatts of next-generation TPU capacity — a model developer reaching down into silicon procurement.<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> OpenAI&rsquo;s Stargate venture with Oracle and SoftBank reaches down into data-center development itself.<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>Two questions separate clear thinking from confusion here.</p>
+<p><strong>Question one: does integration let a company capture several layers of the dollar at once?</strong> Sometimes, yes — genuinely. If custom silicon serves inference at meaningfully lower cost than merchant GPUs purchased at 75% gross margin, the integrated firm has internalized NVIDIA&rsquo;s toll: real economic advantage, not accounting fiction. Broadcom&rsquo;s surging custom-accelerator revenue is the market&rsquo;s evidence that hyperscalers believe this arithmetic.<sup id="fnref2:28"><a class="footnote-ref" href="#fn:28">28</a></sup> Similarly, owning power contracts in a power-constrained world converts a market bottleneck into an internal asset.</p>
+<p><strong>Question two: or does integration merely hide which layers are attractive?</strong> Also yes. When cloud, model, and application live inside one entity, the &ldquo;prices&rdquo; between them are internal transfer prices — unobservable outside and discretionary inside. Reported segment margins tell you how management chose to allocate profit among segments, not where the economic advantage lives. A hyperscaler&rsquo;s AI services can be priced to show the cloud segment thriving, or the model losing money, or vice versa, without any external economic difference.</p>
+<p>The discipline this imposes on analysis is a distinction the rest of the series will use constantly:</p>
+<ul>
+<li>The <strong>accounting boundary</strong>: what is inside the company — visible, reported, and partly arbitrary.</li>
+<li>The <strong>economic boundary</strong>: which specific activity generates the advantage — the thing a competitor would have to replicate.</li>
+</ul>
+<p>The analytical test for locating the economic boundary: <em>imagine the integrated firm broken apart, each layer forced to transact at market prices — which fragment would command pricing power?</em> If Google&rsquo;s TPU operation, standing alone, could sell inference capacity below NVIDIA-based market cost, the rent is in the silicon. If its model, forced to buy market compute, would still command premium API pricing, the rent is in the intelligence. If neither, the rent — if any — is in distribution and the accumulated defaults of billions of users. Integration does not eliminate the layer-by-layer question; it hides the answer inside consolidated financials, and one job of this series is to reconstruct it.</p>
+<p>A final note on integration&rsquo;s strategic meaning: every major participant is integrating <em>toward the bottlenecks</em> — hyperscalers into silicon and power, model companies into compute and distribution, NVIDIA into networking, software, and equity stakes in its own customers. Watch where sophisticated insiders spend to integrate, and you get their revealed belief about where tomorrow&rsquo;s rent will sit. On that evidence, the insiders&rsquo; money currently points at silicon, power, and distribution — not at undifferentiated applications.</p>
+<hr />
+<h2>XV. Scarcity Versus Commoditization</h2>
+<p>If one force determines the eventual division of the trillion dollars, it is this spectrum:</p>
+<p><strong>SCARCE ←——————————————→ COMMODITIZED</strong></p>
+<p>Scarce inputs command pricing power; commoditized inputs earn competitive returns. The principle that turns the spectrum into a forecasting tool:</p>
+<blockquote>
+<p><strong>Economic value migrates toward whichever resources remain scarce while adjacent layers become abundant.</strong></p>
+</blockquote>
+<p>The discipline is to ask, for every layer, not &ldquo;is it scarce today?&rdquo; but four harder questions: <em>what makes it scarce; can supply expand; how fast; and can technology or customers route around it?</em> Applied across the stack:</p>
+<p><strong>Electricity and grid interconnection</strong> — scarce, and scarce for slow-moving reasons: interconnection queues run years; transformer and gas-turbine supply chains tightened through 2025–26; the IEA documents developers building onsite generation because the grid cannot connect them.<sup id="fnref3:21"><a class="footnote-ref" href="#fn:21">21</a></sup> Supply <em>can</em> expand — power is a solved technology — but at construction speed, against permitting and supply-chain friction. Verdict: durably tight for years, though not forever; and note that regulated-utility economics may prevent the scarcity from translating into utility shareholder rent even where it binds.</p>
+<p><strong>Leading-edge fabrication</strong> — extremely scarce: one company operates the frontier at scale, its process advantage compounds, and replication requires tens of billions of dollars, years, and an ecosystem. TSMC&rsquo;s 67.7% gross margins and ~46% ROE are what that scarcity looks like in financial statements.<sup id="fnref4:13"><a class="footnote-ref" href="#fn:13">13</a></sup> Expansion is happening — $60–64 billion of 2026 capex, a further $100 billion pledged for US fabs — but expansion <em>by the incumbent</em> extends rather than erodes the moat, at some margin cost from overseas dilution.<sup id="fnref5:13"><a class="footnote-ref" href="#fn:13">13</a></sup><sup id="fnref2:17"><a class="footnote-ref" href="#fn:17">17</a></sup> Verdict: among the most durable scarcities in the stack.</p>
+<p><strong>Semiconductor equipment (EUV lithography)</strong> — a literal monopoly at the frontier; ASML&rsquo;s machines have no substitute for leading-edge production. Scarcity of the deepest kind: accumulated, decades-long, physics-adjacent know-how.</p>
+<p><strong>High-bandwidth memory and advanced packaging</strong> — currently tight, with pricing power visible in memory-maker margins and in Meta&rsquo;s raised capex guidance citing memory prices.<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup> But memory is historically the most cyclical commodity in electronics: today&rsquo;s shortage funds tomorrow&rsquo;s overcapacity. Verdict: scarce now; treat as cyclical, not structural.</p>
+<p><strong>Merchant GPUs</strong> — today&rsquo;s paramount tollbooth: mid-70s gross margins on tens of billions of quarterly revenue, defended not by the silicon alone but by CUDA&rsquo;s software ecosystem, NVLink/InfiniBand networking, and annual cadence.<sup id="fnref3:12"><a class="footnote-ref" href="#fn:12">12</a></sup> Attacked from two directions at once: hyperscaler custom silicon (the largest customers building substitutes) and any eventual capability plateau that lets older or cheaper chips suffice. Verdict: genuinely scarce today; the durability question — is the moat the chip or the ecosystem? — is the subject of this series&rsquo; <em>Silicon Tollbooth</em> essay.</p>
+<p><strong>Cloud compute capacity</strong> — an oligopoly, but a contested one: three-plus hyperscalers, neoclouds, and sovereign clouds all adding supply as fast as power allows. Compute-as-rental differentiates on reliability, tooling, and enterprise relationships more than on the underlying flops. Verdict: mildly scarce while power constrains everyone; structurally prone to competitive pricing.</p>
+<p><strong>Frontier models</strong> — the pivotal uncertainty of the entire stack. Arguments for scarcity: only a handful of organizations can fund recurring frontier training; capability differences remain commercially meaningful (enterprises pay up for the best coding model, as 2026&rsquo;s revenue shifts demonstrated<sup id="fnref4:9"><a class="footnote-ref" href="#fn:9">9</a></sup>). Arguments for commoditization: open-weight models trail the frontier by a shrinking interval; distillation leaks capability downmarket; for many tasks &ldquo;good enough&rdquo; arrived some time ago; and token prices for fixed capability have collapsed at a pace hostile to pricing power. Verdict: scarce at the frontier, commoditizing behind it, and the <em>width of the gap between frontier and free</em> is the single number that decides the model layer&rsquo;s share of the trillion dollars.</p>
+<p><strong>Inference tokens</strong> — absent differentiation, the closest thing to a pure commodity the stack produces: fungible, price-transparent, benchmarkable.</p>
+<p><strong>Proprietary data, workflow context, and switching costs</strong> — scarce by construction: a customer&rsquo;s accumulated context inside a product cannot be bought by a competitor, only re-accumulated. This is the application layer&rsquo;s principal claim to rent, and it strengthens with tenure.</p>
+<p><strong>Distribution and customer relationships</strong> — enduringly scarce: defaults, enterprise contracts, and installed bases took decades to build. The strongest argument that incumbent platforms capture a large share of the AI dollar is that they already own the front door through which the dollar walks.</p>
+<p>The spectrum&rsquo;s final lesson is dynamic, not static — which is Section XVI.</p>
+<p><em>(Figure 3, conceptual: the layers arrayed along the scarce–commoditized spectrum, with arrows marking each layer&rsquo;s likely direction of drift.)</em></p>
+<hr />
+<h2>XVI. Bottlenecks Move</h2>
+<p>Scarcity is not a property; it is a moment. The AI industry has already lived several bottleneck migrations in five years, and each migration relocated the industry&rsquo;s pricing power in real time.</p>
+<p>The observed sequence: in 2023, GPUs themselves — allocation, not price, decided who could train. Through 2024–25, the constraint slid to advanced packaging (CoWoS capacity) and HBM supply — the chips existed; assembling them did not scale. By 2025–26, the binding constraint had moved <em>outside the semiconductor industry entirely</em>: the IEA and industry surveys document power availability, grid interconnection, transformers, and gas turbines as the gating factors, with a large share of announced data-center projects delayed by electricity rather than silicon.<sup id="fnref4:21"><a class="footnote-ref" href="#fn:21">21</a></sup> Goldman&rsquo;s 2026 analysis describes compute tightness spilling into memory, ASICs, and fiber.<sup id="fnref2:22"><a class="footnote-ref" href="#fn:22">22</a></sup> Meanwhile Meta&rsquo;s guidance raises cited memory prices — the older bottleneck reasserting itself even as the newer one binds.<sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>Each migration follows the same economic script. A constraint binds → its owner&rsquo;s pricing power spikes → extraordinary margins appear → capital floods toward the constraint → capacity expands → the constraint releases → pricing power collapses toward competitive levels → and the <em>next</em> scarcest input inherits the crown. The script is as old as commodity cycles; what is unusual in AI is the tempo — migrations that took a decade in past buildouts complete in eighteen months.</p>
+<p>The forward-looking candidate list, roughly in order of the industry&rsquo;s current anxiety: electricity and interconnection (binding now, slow to relieve); transformer and turbine manufacturing capacity; data-center construction labor; HBM and packaging (cyclically recurring); fiber and optical networking; frontier training data — the internet has been read, and rights to what remains are being priced; inference capacity in the specific geographies where demand concentrates; and, at the end of the chain, the least-discussed bottleneck of all: <strong>trust and organizational absorption</strong> — the rate at which enterprises can actually verify, integrate, and take accountability for AI output, which no amount of capex relieves.</p>
+<p>The rule this section contributes to the permanent framework:</p>
+<blockquote>
+<p><strong>Today&rsquo;s bottleneck captures today&rsquo;s rent. Tomorrow&rsquo;s bottleneck captures tomorrow&rsquo;s rent.</strong></p>
+</blockquote>
+<p>Its corollary is the discipline against the laziest error in AI investing: extrapolating the current tollbooth forever. &ldquo;NVIDIA wins because NVIDIA is winning&rdquo; is not analysis; it is a description of the present bottleneck. The analytical question is always <em>which scarcity is structural and which is a traffic jam</em> — and the honest answer for most layers is the second, with the shortlist of plausibly structural scarcities (frontier process technology, EUV, distribution, accumulated customer context) notably short.</p>
+<hr />
+<h2>XVII. Price Is Not Value</h2>
+<p>A distinction now that changes the moral of the entire story: the price paid for AI and the value created by AI are different numbers, often wildly different, and the gap between them is itself the largest prize in the system.</p>
+<p><strong>Customer Surplus = Economic Value Created − Price Paid</strong></p>
+<p>Suppose an AI agent costs $1 of compute to run and performs a task a customer values at $100 — a legal review that would have cost $100 of associate time, a code change worth $100 of engineer hours. Between the $1 of cost and the $100 of value lies $99 of surplus, and <em>nothing in the technology determines who gets it.</em> Bargaining power does. The candidate claimants:</p>
+<ul>
+<li>The <strong>model provider</strong> captures it if its model is meaningfully the only one that can do the task — frontier scarcity converts directly into price.</li>
+<li>The <strong>application provider</strong> captures it if it owns the workflow, the context, and the customer relationship, and can price against the value of the outcome rather than the cost of the tokens.</li>
+<li>The <strong>distributor</strong> captures it if the customer reaches the capability through a platform that can tax the transaction.</li>
+<li>The <strong>customer</strong> captures it if competition among all of the above drives price toward cost — which, for a $1-cost task, means the customer pockets $99 of every $100 of value created.</li>
+</ul>
+<p>Now the observation that should reorganize how you read every bullish AI revenue forecast: <strong>the customer-capture outcome is not a failure mode of the technology — it is the default outcome of competition, and it is arguably what the trajectory of token prices has been showing for three years.</strong> The cost of a fixed unit of capability has collapsed; providers pass the declines through because their competitors will if they don&rsquo;t. Cheap intelligence can simultaneously be enormously valuable to society, transformative for customers, and a mediocre business for its producers. Electricity is the precedent: civilization-defining, and utilities earn regulated single-digit returns.</p>
+<p>This yields the essay&rsquo;s most counterintuitive standing hypothesis, to be tested throughout the series: <strong>the size of the AI economy&rsquo;s social value and the size of its capturable profit pool are independent variables.</strong> A world in which AI adds trillions to global output while its suppliers earn ordinary returns is not a paradox; it is what happened with most general-purpose technologies, most of the time. The interesting question — the series&rsquo; question — is where the exceptions live: the specific structural positions from which some participants defied the pass-through and kept a slice of the surplus.</p>
+<hr />
+<h2>XVIII. The Value-Capture Triangle</h2>
+<p>Compress everything so far into a framework small enough to use, applied to any layer or company:</p>
+<p><strong>1. Value Creation</strong> — how much economic usefulness does this layer enable? (The size of the surplus it makes possible.)</p>
+<p><strong>2. Value Capture</strong> — how much of that usefulness can it charge for and keep? (Its pricing power against the pass-through.)</p>
+<p><strong>3. Capital Requirement</strong> — how much invested capital must it commit to do so? (The denominator of its returns.)</p>
+<p>The triangle&rsquo;s power is in the corners it forces apart. Layers score high on creation and low on capture (open-weight models: immense enabled value, near-zero pricing power). High on capture and punishing on capital (leading-edge fabs: magnificent margins purchased with $60 billion-a-year capex<sup id="fnref6:13"><a class="footnote-ref" href="#fn:13">13</a></sup>). Modest on creation, superb on capture-per-capital (an entrenched vertical application taxing a workflow with almost no incremental invested capital).</p>
+<p>And it yields the thesis this series will spend seven more essays testing:</p>
+<blockquote>
+<p><strong>The most important AI businesses may not be the businesses creating the most technological value. They may be the businesses best positioned to capture value while requiring comparatively little incremental capital.</strong></p>
+</blockquote>
+<p>Technological centrality and economic attractiveness are different rankings. The whole history of the computing industry — where component makers created the capability and software and distribution captured the profit — is one long illustration.</p>
+<p><em>(Figure 4, conceptual: the triangle with representative layers plotted inside it.)</em></p>
+<hr />
+<h2>XIX. The AI Economic Rent Score</h2>
+<p>To keep the series honest — to force each essay to grade its layer on the same rubric rather than falling in love with its subject — here is the permanent scorecard. Twenty tests, grouped in five clusters. No pretense of numerical precision: where data supports quantification, quantify; where it doesn&rsquo;t, the score is a structured judgment, stated as such.</p>
+<p><strong>Market (how much money can reach this layer?)</strong>
+1. Total addressable market
+2. Revenue growth potential
+3. Customer ownership — does this layer face the end customer or sit behind someone who does?
+4. Distribution advantages</p>
+<p><strong>Margins (how much of the money survives?)</strong>
+5. Gross margin structure
+6. Operating margin potential
+7. Free-cash-flow conversion
+8. Pricing power — can price sit above cost through a cycle?</p>
+<p><strong>Capital (at what cost is the money earned?)</strong>
+9. Capital intensity
+10. ROIC, current and incremental
+11. Asset life versus depreciation reality — the GPU-lifespan question
+12. Scale economies</p>
+<p><strong>Moat (why won&rsquo;t competition take it away?)</strong>
+13. Switching costs
+14. Barriers to entry
+15. Supply scarcity, and whether it is structural or cyclical
+16. Durability of the moat under sustained attack</p>
+<p><strong>Risk (what breaks it?)</strong>
+17. Competitive intensity
+18. Commoditization risk
+19. Technological-obsolescence risk
+20. Vertical-integration risk — can an adjacent layer absorb this one?</p>
+<p>Each subsequent essay ends by scoring its layer on these twenty tests, producing across the series a consistent, comparable <strong>AI Economic Rent Score</strong> — the closest this project comes to a final answer to its title question.</p>
+<hr />
+<h2>XX. Four $1 Trillion Economies</h2>
+<p>Now assemble everything into the essay&rsquo;s centerpiece: four internally consistent futures for how a $1 trillion AI end-market divides. These are scenarios, not forecasts — each specifies the conditions under which it obtains, the evidence that would support it, and what would falsify it. Reality will be a weighted blend; the weights are the series&rsquo; open question.</p>
+<h3>Scenario A — Infrastructure Captures the Dollar</h3>
+<p><strong>The world:</strong> compute remains structurally hard to expand. Power, interconnection, advanced fabrication, and packaging stay tight for a decade; demand for intelligence grows faster than physical capacity can. Chips, data centers, and energy retain pricing power because everything above them bids for a constrained input.</p>
+<p><strong>Conditions required:</strong> persistent physical bottlenecks (the IEA&rsquo;s tightening supply chains extend rather than resolve<sup id="fnref5:21"><a class="footnote-ref" href="#fn:21">21</a></sup>); continued frontier scaling keeping compute demand voracious; custom silicon failing to break merchant-GPU pricing; utilization staying high.</p>
+<p><strong>Supporting evidence today:</strong> NVIDIA&rsquo;s sustained mid-70s gross margins on explosive volume<sup id="fnref4:12"><a class="footnote-ref" href="#fn:12">12</a></sup>; TSMC&rsquo;s record margins and raised guidance<sup id="fnref7:13"><a class="footnote-ref" href="#fn:13">13</a></sup>; power constraints delaying a large share of announced projects<sup id="fnref6:21"><a class="footnote-ref" href="#fn:21">21</a></sup>; every layer above infrastructure integrating downward to secure supply.</p>
+<p><strong>Falsified by:</strong> capacity gluts (utilization falling, spot compute prices collapsing); an efficiency discontinuity that slashes compute per task faster than demand grows; capability plateau removing the appetite for frontier hardware.</p>
+<p><strong>Winners:</strong> fabs, equipment, memory, accelerators, power, data-center owners. <strong>Losers in relative bargaining power:</strong> model companies and applications, squeezed between input costs and competitive output pricing.</p>
+<h3>Scenario B — Foundation Models Capture the Dollar</h3>
+<p><strong>The world:</strong> compute becomes adequately available, but frontier intelligence does not commoditize. Only a few organizations sustain the recurring multi-tens-of-billions training expense; capability gaps remain wide enough that customers pay up for the best model, and the frontier labs price tokens against the value of the work, not the cost of the flops.</p>
+<p><strong>Conditions required:</strong> capability differentiation that stays commercially decisive; open-weight models remaining durably behind on the tasks enterprises pay most for; training costs functioning as an entry barrier rather than a treadmill.</p>
+<p><strong>Supporting evidence today:</strong> the extraordinary 2026 revenue trajectories of the frontier labs — Anthropic&rsquo;s reported run-rate surge driven by enterprise and coding adoption, valuations near a trillion dollars<sup id="fnref5:9"><a class="footnote-ref" href="#fn:9">9</a></sup>; enterprises demonstrably switching spend toward whichever lab holds the capability lead, implying quality-elastic demand.</p>
+<p><strong>Falsified by:</strong> open-weight parity on commercial tasks; token-price collapse for frontier capability; distillation making frontier advantages un-hoardable; the capability lead changing hands so often that no lab converts it into durable pricing.</p>
+<p><strong>Winners:</strong> the two-to-four surviving frontier labs and whoever owns equity in them. <strong>Structural note:</strong> this is the scenario the private markets are currently pricing — model-lab valuations imply enormous future rent at this layer — which makes its falsification criteria the most important watchlist in the industry.</p>
+<h3>Scenario C — Applications Capture the Dollar</h3>
+<p><strong>The world:</strong> models become excellent and interchangeable; inference becomes cheap; APIs become commodities purchased like electricity. But the application layer owns what cannot commoditize: the customer, the workflow, the accumulated proprietary context, the integration into how work actually happens, and the switching costs that grow with every month of use. Rent migrates up-stack to whoever holds the relationship.</p>
+<p><strong>Conditions required:</strong> model convergence; applications building context moats faster than model companies can absorb application features into the model itself; enterprises buying outcomes rather than tokens.</p>
+<p><strong>Supporting evidence today:</strong> the software industry&rsquo;s entire history (the OS and the application captured what the component enabled); early evidence that vertical AI applications with workflow lock-in sustain premium pricing over the raw API cost beneath them; incumbent software vendors successfully repricing AI into existing contracts.</p>
+<p><strong>Falsified by:</strong> frontier models absorbing application functionality wholesale — the &ldquo;GPT-5 ate my startup&rdquo; dynamic — which is this scenario&rsquo;s live vulnerability: the application layer&rsquo;s suppliers are also its most capable potential competitors; or agent interfaces disintermediating application UIs entirely.</p>
+<p><strong>Winners:</strong> vertical software with real workflow depth, incumbent platforms with distribution, agent orchestrators owning enterprise context. <strong>Losers in relative terms:</strong> undifferentiated model providers, merchant compute.</p>
+<h3>Scenario D — Customers Capture the Dollar</h3>
+<p><strong>The world:</strong> competition works. Every layer&rsquo;s scarcity resolves; models, compute, and applications all compete vigorously; prices fall toward cost throughout the stack. AI transforms productivity across the economy — and its suppliers earn ordinary, unexceptional returns while customers and society pocket the overwhelming share of the surplus. The trillion dollars is spent, and <em>no one</em> in the value chain gets rich relative to their cost of capital.</p>
+<p><strong>Conditions required:</strong> no durable moat anywhere — or moats confined to a few narrow positions (EUV, leading-edge process) too small to absorb much of the trillion.</p>
+<p><strong>Supporting evidence today:</strong> the three-year collapse in price per unit of capability; the speed with which every high-margin position in the stack has attracted well-funded attack; the historical base rate — most general-purpose technologies delivered most of their surplus to users, not producers.</p>
+<p><strong>Falsified by:</strong> sustained super-normal ROIC anywhere in the stack for a decade — which, note, is exactly what NVIDIA and TSMC are currently printing, making the present moment either early Scenario A/B or the top of a cycle Scenario D will describe in retrospect.</p>
+<p><strong>Winners:</strong> everyone who <em>uses</em> AI; the economy; consumers. <strong>Losers:</strong> the marginal financiers of the buildout — with the BIS&rsquo;s equity-versus-debt pricing divergence<sup id="fnref7:7"><a class="footnote-ref" href="#fn:7">7</a></sup> reading, in this scenario, as the debt market having been right.</p>
+<p><em>(Figure 5, conceptual: one stacked bar per scenario, dividing the hypothetical $1 trillion among the layers — drawn without numbers; the point is the contrast in shape, not false precision.)</em></p>
+<p>The scenarios are not equally likely, and they are not mutually exclusive across time — the industry can pass through A on its way to C, or oscillate between B and D as capability leads open and close. The series&rsquo; remaining essays exist to move probability mass among them, layer by layer, with evidence.</p>
+<hr />
+<h2>XXI. The Jevons Question</h2>
+<p>A tension has been running under the whole essay and now needs direct treatment. Intelligence is getting dramatically cheaper per unit — the IEA calls the efficiency gains unprecedented in energy history<sup id="fnref7:21"><a class="footnote-ref" href="#fn:21">21</a></sup>; token prices for fixed capability have fallen by orders of magnitude. Doesn&rsquo;t cheaper intelligence shrink the AI economy and gut the $1 trillion hypothetical?</p>
+<p>Not necessarily — and possibly the opposite. The 19th-century economist William Stanley Jevons observed that more efficient steam engines <em>increased</em> total coal consumption, because efficiency made steam power economic for uses previously unaffordable. The general mechanism: when cost per unit falls, quantity demanded can rise by more than proportionally, so that</p>
+<p><strong>Cost per unit ↓ × Units consumed ↑↑↑ = Total spending ↑</strong></p>
+<p>Whether that happens depends on one variable: the <strong>price elasticity of demand</strong> for intelligence. If demand is inelastic — the world wants a roughly fixed amount of AI, cheaper — total spending falls as prices fall, and the trillion-dollar end-market never materializes. If demand is elastic — every price decline unlocks uses that were previously uneconomic — total spending grows even as unit prices collapse.</p>
+<p>The evidence to date is emphatically on the elastic side, and the mechanism is visible in the industry&rsquo;s own consumption data. Each order-of-magnitude price decline has activated a new consumption tier: capabilities once reserved for high-value queries became viable for routine autocomplete; then for always-on background processing; now for <strong>agents</strong> — systems that consume thousands of model calls per task, per user, continuously, and for <strong>machine-to-machine</strong> AI consumption where no human reads the output at all. The IEA&rsquo;s finding compresses the whole dynamic into one sentence: energy per AI task is falling at record speed <em>and</em> total AI electricity demand is set to triple, because usage growth is overwhelming efficiency growth.<sup id="fnref8:21"><a class="footnote-ref" href="#fn:21">21</a></sup> Hyperscalers report the same from the demand side — capacity sold out even as serving costs per token fall.<sup id="fnref5:12"><a class="footnote-ref" href="#fn:12">12</a></sup><sup id="fnref3:22"><a class="footnote-ref" href="#fn:22">22</a></sup></p>
+<p>Jevons dynamics are therefore the strongest single argument that the $1 trillion end-market is reachable: the path runs not through expensive intelligence but through <em>nearly free</em> intelligence consumed in staggering volume. But note precisely what Jevons rescues and what it doesn&rsquo;t. It rescues the <strong>size of the market</strong>. It says nothing about <strong>who captures it</strong> — indeed, the Jevons path is one where unit margins are thin by construction and value capture depends entirely on volume, scale economies, and position, which tilts the scenario weights toward A (infrastructure serving the volume) and C/D (applications and customers harvesting the cheapness) and <em>against</em> B (premium-priced intelligence). The full elasticity analysis belongs to this series&rsquo; second essay, <em>The Cost of Intelligence</em>; here the standing conclusion is that cheapness and enormity are compatible — and that their compatibility is a warning, not a comfort, for anyone expecting fat margins.</p>
+<hr />
+<h2>XXII. The Pie Is Not Fixed</h2>
+<p>One conceptual correction before the risk accounting, because the essay&rsquo;s framing — dividing $1 trillion — smuggles in a zero-sum picture that is false in the most important way.</p>
+<p>The $1 trillion of AI end-spending, if it arrives, is not a fixed pie carved among suppliers. It is an <em>input</em> into a larger transformation:</p>
+<p><strong>AI Expenditure → Productivity → Economic Output → Surplus</strong></p>
+<p>The channels are concrete: labor augmentation (the same worker producing more); labor substitution (the same output at lower cost); compressed R&amp;D cycles (drugs, materials, chips designed faster); lower transaction and coordination costs; entirely new products; and — the channel with the longest lever — accelerated scientific discovery. If $1 trillion of AI spending raises global output by even a low single-digit percentage, the value created is measured in multiple trillions of dollars annually against a global economy of roughly $110 trillion. Goldman&rsquo;s macro work already frames AI capex against GDP shares comparable to previous general-purpose-technology buildouts precisely because the payoff is measured in economy-wide productivity, not vendor revenue.<sup id="fnref7:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:25"><a class="footnote-ref" href="#fn:25">25</a></sup></p>
+<p>This reframes the series&rsquo; question one final level up. The full decomposition of the AI economy&rsquo;s value is:</p>
+<p><strong>Total value created = supplier profits + supplier wages + customer surplus + downstream productivity gains</strong></p>
+<p>Everything this series hunts — economic rent — is only the first term, and Sections XVII and XXI have argued it may be the smallest. &ldquo;Who captures the AI dollar?&rdquo; is therefore really two nested questions: how large is the total surplus (a macroeconomic question, mostly good news), and what fraction of it can any supplier fence off (a microeconomic question, mostly hard news). Keeping the two separate is what prevents both errors that dominate public discussion: the pessimist&rsquo;s error of reading thin supplier margins as AI failing, and the optimist&rsquo;s error of reading enormous social value as guaranteed supplier profits.</p>
+<hr />
+<h2>XXIII. Who Bears the Risk?</h2>
+<p>Every expected return in the AI economy corresponds to a risk someone is holding, and the risks are distributed very differently from the potential rewards. The ledger:</p>
+<p><strong>Technology risk</strong> — new architectures or model paradigms obsolete existing assets. Held by: whoever owns installed hardware and trained models. A billion-dollar cluster is a bet that its architecture stays relevant through its depreciation schedule.</p>
+<p><strong>Demand risk</strong> — the trillion-dollar end-market arrives late, smaller, or differently composed. Held by: equity holders across the stack, but concentrated in whoever committed capacity earliest — hyperscalers with $725 billion of 2026 capex<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and the SPV sponsors behind their leases.</p>
+<p><strong>Utilization risk</strong> — capacity gets built and sits idle. Held by: data-center owners, neoclouds, and lessors; partly transferred to hyperscalers via take-or-pay offtakes — which is exactly what those contracts are for.<sup id="fnref5:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p><strong>Price risk</strong> — inference and compute prices collapse faster than volumes grow. Held by: every metered-revenue business; hedged only by those with cost structures that fall as fast as prices.</p>
+<p><strong>Financing and refinancing risk</strong> — debt raised at 2025–26 spreads must be rolled in whatever conditions prevail at maturity; the BIS specifically flags refinancing pressure at the vehicle level, procyclical private-credit appetite, and guarantee activation as the transmission channels.<sup id="fnref6:11"><a class="footnote-ref" href="#fn:11">11</a></sup><sup id="fnref3:26"><a class="footnote-ref" href="#fn:26">26</a></sup> Held by: private-credit funds, insurers, bondholders — and, through guarantees, sneaking back to the hyperscalers whose balance sheets the structures were designed to protect.</p>
+<p><strong>Energy risk</strong> — power costs or availability constrain operations. Held by: operators without locked supply; mitigated by exactly the long-term PPAs and onsite generation the industry is racing to sign.<sup id="fnref9:21"><a class="footnote-ref" href="#fn:21">21</a></sup></p>
+<p><strong>Competitive risk</strong> — margins competed away. Held by: everyone; priced by: apparently, in equity markets, almost no one — which is the BIS&rsquo;s equity-versus-debt point once more.<sup id="fnref8:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+<p><strong>Depreciation/obsolescence risk</strong> — economic asset lives shorter than accounting lives. Held by: cloud-layer shareholders, silently, inside earnings that depend on the useful-life estimate (Section XII).</p>
+<p><strong>Regulatory risk</strong> — deployment restricted, liability assigned, data-use constrained. Held by: model companies and applications most directly; a wildcard across every scenario.</p>
+<p>The synthesis, and the section&rsquo;s contribution to the permanent framework:</p>
+<blockquote>
+<p><strong>The entity capturing today&rsquo;s AI dollar is not necessarily the entity earning the best risk-adjusted return — and several entities are carrying risks for which they are collecting no visible premium at all.</strong></p>
+</blockquote>
+<p>The clearest current example: the migration of AI-infrastructure risk into private credit and insurance balance sheets — vehicles with no bank-style capital requirements, limited disclosure, and no resolution mechanism — at spreads that the BIS&rsquo;s warnings suggest may underprice the tail.<sup id="fnref4:26"><a class="footnote-ref" href="#fn:26">26</a></sup> If the boom pays off, those lenders earn a coupon. If it doesn&rsquo;t, they own data centers. That asymmetry, multiplied across $300–600 billion of projected exposure by 2030,<sup id="fnref5:26"><a class="footnote-ref" href="#fn:26">26</a></sup> is the AI economy&rsquo;s most under-analyzed position — and the reason this series&rsquo; financing essay exists.</p>
+<hr />
+<h2>XXIV. The Geography of the AI Dollar</h2>
+<p>A short section with one job: preventing a category error about <em>where</em> the AI dollar lands.</p>
+<p>An AI dollar has at least eight geographic addresses, and they rarely coincide: where the AI is <strong>consumed</strong> (globally); where revenue is <strong>booked</strong> (heavily US, with tax-efficient routing); where the servers <strong>run</strong> (US-dominated, with the IEA showing the US as the largest share of data-center demand growth, followed by China<sup id="fnref2:23"><a class="footnote-ref" href="#fn:23">23</a></sup>); where chips are <strong>designed</strong> (US); where they are <strong>fabricated</strong> (overwhelmingly Taiwan, with US capacity building at a deliberate margin cost — TSMC guides 2–4 points of gross-margin dilution from overseas fabs<sup id="fnref3:17"><a class="footnote-ref" href="#fn:17">17</a></sup>); where equipment is <strong>made</strong> (Netherlands, Japan, US); where electricity is <strong>generated</strong> (wherever the data centers are, from a grid mix the IEA details region by region<sup id="fnref2:24"><a class="footnote-ref" href="#fn:24">24</a></sup>); where the financing <strong>originates</strong> (global capital pools — including Gulf sovereign funds and Japanese conglomerates — funding US buildout<sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup>); and where the profit ultimately <strong>accrues</strong> (to shareholders and creditors scattered across all of the above).</p>
+<p>Goldman&rsquo;s own methodology note makes the point concretely: the commonly cited hyperscaler-capex figure simultaneously <em>understated</em> global AI investment and <em>overstated</em> US investment by roughly $200 billion each, because US-headquartered firms invest heavily abroad — corporate domicile is not economic geography.<sup id="fnref8:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The practical rule for the series: whenever a claim says &ldquo;the US captures X&rdquo; or &ldquo;country Y wins AI,&rdquo; ask <em>which of the eight addresses</em> the claim is about. National AI strategies, tariff policy, and export controls all act on specific addresses, and their economic incidence — who actually pays or gains — routinely lands at a different address than the one targeted. The full geopolitical treatment belongs elsewhere; the map of addresses belongs here.</p>
+<hr />
+<h2>XXV. Historical Technology Buildouts — and Their Limits</h2>
+<p>Every AI-economics argument eventually reaches for a historical analogy. The analogies are genuinely useful — but only if interrogated with the same ten questions each time: who supplied the infrastructure, who financed it, where were the bottlenecks, who captured the initial profits, who captured the long-run profits, did the builders earn attractive returns, did applications eventually capture more, did consumers capture most of the surplus, what transfers to AI, and what is fundamentally different?</p>
+<p><strong>Railroads (1840s–1890s).</strong> Infrastructure supplied by hundreds of competing private companies; financed by the era&rsquo;s equivalent of today&rsquo;s bond-and-private-credit machine, including notorious off-balance-sheet construction vehicles. The buildout transformed the economy — and repeatedly bankrupted its builders: overbuilding, rate wars, and the 1873 and 1893 panics wiped out enormous railroad equity, while the <em>users</em> of cheap freight (industry, agriculture, consumers) captured the surplus, and durable profits eventually accrued to the consolidated survivors of the wreckage and to strategic chokepoints. Transfers to AI: overbuilding funded by exuberant credit is the base case, not the tail case; consolidation-survivors and chokepoints, not pioneers, keep the rent. Different: track had no Jevons demand explosion and a 50-year asset life; GPUs have both problems inverted.</p>
+<p><strong>Electrification (1880s–1930s).</strong> Generation and grids were built by utilities that competition and then regulation drove to modest, controlled returns — society deliberately converted the natural-monopoly rent into consumer surplus. The lasting fortunes accrued to <em>equipment</em> suppliers (GE, Westinghouse) and, above all, to the industries electricity enabled. Transfers to AI: the &ldquo;electricity of intelligence&rdquo; framing cuts against the model layer, not for it — if intelligence becomes a utility, utility economics follow; equipment (read: NVIDIA, ASML, TSMC) and applications are where electrification says to look. Different: no regulator is coming to cap token prices; the compression, if it comes, will be competitive rather than statutory.</p>
+<p><strong>Telecommunications and the fiber bubble (1990s–2002).</strong> Roughly analogous exuberance: carriers and upstarts laid vastly more fiber than near-term demand required, financed by debt; the 2001–02 bust destroyed the builders (WorldCom, Global Crossing) — and then every strand of that fiber was eventually lit, profitably, by acquirers who paid cents on the dollar, powering the streaming and cloud economy the builders had correctly foreseen but not survived to serve. Transfers to AI: <em>being right about demand is not the same as earning a return on supplying it</em>; timing and capital structure decide who is alive when demand arrives. This is the analogy the BIS&rsquo;s financing warnings implicitly invoke.<sup id="fnref9:7"><a class="footnote-ref" href="#fn:7">7</a></sup> Different: fiber doesn&rsquo;t depreciate technologically in five years; dark fiber waited a decade for demand, whereas idle GPUs become obsolete waiting.</p>
+<p><strong>The internet and cloud (2000s–2020s).</strong> The counterexample that keeps the bulls honest: this buildout&rsquo;s leading investors — the hyperscalers — <em>did</em> earn spectacular returns, because cloud infrastructure came bundled with software moats, switching costs, and oligopoly discipline that railroads and fiber never had. And the era&rsquo;s largest fortunes accrued above the infrastructure, to application and platform companies (search, social, e-commerce) that owned users and data while renting everything below. Transfers to AI: infrastructure <em>can</em> be a great business when wrapped in software lock-in — the hyperscalers are betting their $725 billion that AI infrastructure inherits cloud&rsquo;s economics rather than fiber&rsquo;s<sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup>; and the historical pull of profit toward the customer-owning layer is the strongest precedent behind Scenario C.</p>
+<p><strong>Smartphones (2007–).</strong> One more instructive split: the hardware layer commoditized brutally for everyone except the single player (Apple) who fused hardware, software, and distribution into one integrated position — while the platform toll (app stores) became one of the great rent streams of the era. Transfers to AI: integration aimed at the customer relationship, and toll positions on distribution, outperform every unbundled middle layer.</p>
+<p>The honest synthesis across all five: infrastructure builders earned poor-to-fair returns in three cases out of five; the equipment layer and the application/platform layer captured the durable rents in four out of five; consumers captured the majority of total surplus in five out of five. History&rsquo;s vote, for what it is worth, is some blend of Scenarios C and D, with an equipment-shaped exception — and one genuine cloud-shaped counterexample that the largest spenders in today&rsquo;s buildout are explicitly trying to repeat. Goldman&rsquo;s observation that AI investment as a share of GDP remains within the range of prior general-purpose-technology buildouts confirms the comparison is proportionate, not hysterical.<sup id="fnref9:1"><a class="footnote-ref" href="#fn:1">1</a></sup> What history cannot settle is which precedent binds — because AI differs from every predecessor in the two respects the next section treats as live uncertainties: its asset lives are radically shorter, and its product may substitute for labor itself, a demand channel no prior buildout possessed.</p>
+<hr />
+<h2>XXVI. What Would Make This Entire Framework Wrong?</h2>
+<p>An analytical framework that cannot specify its own failure conditions is a mood, not a model. Here is what would force major revision — stated concretely enough to be checkable.</p>
+<p><strong>Model progress stalls.</strong> If frontier capability plateaus for several years, the recurring-training treadmill stops, compute demand growth decelerates, the installed base becomes sufficient, and the entire scarcity structure of Sections XV–XVI unwinds at once. Watch: capability benchmarks, frontier-lab training budgets, the resale market for accelerators.</p>
+<p><strong>Enterprise willingness to pay disappoints.</strong> If pilots keep failing to convert — if AI spending stays a line item procurement can cut rather than a workflow it cannot remove — the end-market plateaus in the low hundreds of billions and the investment trillion never meets its revenue trillion. Watch: net revenue retention at AI application companies; the gap between seat sales and usage.</p>
+<p><strong>Inference demand grows much slower than the Jevons argument requires.</strong> Section XXI&rsquo;s elasticity evidence is short-history. If the next 10× price decline fails to produce a &gt;10× volume response, total spending shrinks with prices. Watch: aggregate token-consumption growth against token-price declines.</p>
+<p><strong>Utilization stays structurally poor.</strong> If meaningful shares of the capacity now being financed sit idle, the fiber precedent governs and the financing chain, not the operating chain, determines outcomes. Watch: hyperscaler capex-to-revenue trajectories; neocloud pricing; SPV refinancing terms.<sup id="fnref10:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref7:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p><strong>Efficiency collapses aggregate compute requirements.</strong> The mirror image of Jevons: an algorithmic discontinuity (radically cheaper architectures, dramatically better small models) could satisfy the world&rsquo;s intelligence demand with a fraction of projected infrastructure. DeepSeek-style efficiency shocks are the small preview. Watch: compute-per-capability trendlines versus demand growth.</p>
+<p><strong>Open-weight models eliminate model-layer pricing power.</strong> If freely available models reach commercial parity on the tasks that drive paid demand, Scenario B dies and the model layer&rsquo;s trillion-dollar valuations with it. Watch: the frontier-to-open capability gap, measured in months and measured on paid workloads.</p>
+<p><strong>Labor substitution proves shallow.</strong> If agents cannot cross the reliability-and-accountability threshold for real payroll-budget work, Source 3 of Section IX — the only source that makes $1 trillion look conservative — never opens. Watch: agent task-completion rates in production; insurance and liability frameworks for autonomous work.</p>
+<p><strong>Regulation rewrites the economics.</strong> Liability regimes, data-use restrictions, compute governance, or energy policy could re-price any layer. Watch: the first major AI liability precedents.</p>
+<p><strong>A different computing architecture breaks the stack.</strong> Anything that dethrones the GPU-shaped datacenter re-deals every hand above the physics.</p>
+<p><strong>Demand concentrates somewhere unexpected.</strong> If the trillion arrives but overwhelmingly through one channel — say, machine-to-machine agent commerce — layer economics designed around human seats and chat interfaces mislead.</p>
+<p>Two of these — enterprise willingness to pay, and utilization — are checkable within roughly eight quarters and would each move the scenario weights more than everything else combined. That is where honest attention belongs.</p>
+<hr />
+<h2>XXVII. Taking Stock: What We Know, and What the Series Must Determine</h2>
+<p>Resist the ending this essay is supposed to have. The genre demands a winner — &ldquo;applications will capture the AI dollar,&rdquo; or &ldquo;buy the tollbooths&rdquo; — and declaring one here would betray everything the preceding sections established, because the honest conclusion of the analysis is that <em>the question is currently undecidable, and precisely which evidence would decide it is now known.</em></p>
+<p>What the trillion-dollar question has been shown <strong>not</strong> to be: a revenue question. Revenue is where the analysis starts, six income-statement lines above where it ends. Between &ldquo;who gets paid&rdquo; and &ldquo;who captures value&rdquo; stand gross margin, operating profit, free cash flow after this industry&rsquo;s staggering capex, return on invested capital against its cost, and — the only thing that ultimately matters — the durability of any ROIC-over-WACC spread against competition specifically organized to destroy it.</p>
+<p>What has been built instead is the machine for answering it:</p>
+<ul>
+<li>The two-trillions distinction — capital formation now versus end-demand later — and the demanding arithmetic connecting them (Sections I–II);</li>
+<li>The vocabulary — revenue through rent — that makes &ldquo;capture&rdquo; a measurable claim (Sections III–IV);</li>
+<li>The three-layer map, and the two accounting maps (revenue flow; value added) that trace a dollar without counting it five times (Sections V–VII);</li>
+<li>The demand-side foundation: where willingness to pay actually exists, and the three sources — new money, IT budgets, payroll — from which a trillion could come (Sections VIII–IX);</li>
+<li>The structural mechanics: training versus inference, software-on-heavy-industry, capital intensity, the financing chain, vertical integration (Sections X–XIV);</li>
+<li>The dynamic engine: scarcity versus commoditization, and bottlenecks that move (Sections XV–XVI);</li>
+<li>The surplus problem — price is not value, and the customer is a full competitor for every dollar of it (Section XVII);</li>
+<li>The reusable instruments: the Value-Capture Triangle, the twenty-test Rent Score, the four scenarios and their falsifiers (Sections XVIII–XX);</li>
+<li>And the humility infrastructure: Jevons, the growing pie, the risk ledger, geography, history, and the framework&rsquo;s own kill-criteria (Sections XXI–XXVI).</li>
+</ul>
+<p>Identifying AI&rsquo;s eventual economic winners requires knowing, at minimum: where scarcity persists structurally rather than cyclically; where competition destroys pricing; where capital requirements are heaviest and whether accounting lives match economic ones; who owns distribution and customers; how fast inference costs fall and how elastically demand responds; whether frontier models commoditize; whether applications build real switching costs before their model suppliers absorb them; how deeply AI penetrates payroll budgets; whether ROIC clears WACC across the buildout; who is quietly holding the risk; and who captures the surplus between $1 of cost and $100 of value. No one possesses those answers today. The market is currently pricing several mutually exclusive answers simultaneously — equity markets priced closer to Scenario B, debt markets closer to D,<sup id="fnref11:7"><a class="footnote-ref" href="#fn:7">7</a></sup> insiders&rsquo; integration spending pointing at A&rsquo;s bottlenecks, history whispering C — which is itself the strongest evidence the question remains open.</p>
+<p>The next question in the sequence is forced by everything above. Every scenario, every scorecard test, every falsifier ultimately rests on one quantity this essay has treated as a black box: what it actually costs to manufacture intelligence — the full chain from electricity through silicon to tokens to economically useful work, and the trajectory of that cost. Until it is opened, no layer&rsquo;s margins can be judged sustainable or doomed.</p>
+<p><strong>Next: Essay II — The Cost of Intelligence</strong></p>
+<h3><em>From Electricity to Tokens to Economically Useful Work</em></h3>
+<hr />
+<h2>Sources and References</h2>
+<p>Primary and high-quality sources consulted for the factual claims in this essay. Figures described as illustrations, scenarios, or conceptual diagrams are the author&rsquo;s constructions and are labeled as such in the text.</p>
+<p><em>Methodological note: where this essay relies on annualized run rates, leaked projections, or secondary reporting of primary documents, it says so in the text and uses the figures only at the precision the sourcing supports. All scenario content (Section XX), illustrative arithmetic (Sections II and XII), and conceptual figures are the author&rsquo;s constructions, labeled as such, and should not be read as sourced estimates.</em></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Goldman Sachs Research, &ldquo;Global AI Investment Is Forecast to Exceed $1 Trillion in 2026&rdquo; (Aug 2026). <a href="https://www.goldmansachs.com/insights/articles/global-investment-is-forecast-to-exceed-1-trillion-in-2026">https://www.goldmansachs.com/insights/articles/global-investment-is-forecast-to-exceed-1-trillion-in-2026</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>CNBC, &ldquo;Tech AI spending approaches $700 billion in 2026, cash taking big hit&rdquo; (Feb 6, 2026). <a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html">https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html</a> ; Data Center Frontier/industry reporting on hyperscaler 2026 guidance (Amazon ~$200B; Alphabet $175–205B; Microsoft ~$110–190B calendar-year basis; Meta $115–145B).&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Futurum Group, &ldquo;AI Capex 2026: The $690B Infrastructure Sprint&rdquo; (Feb 2026). <a href="https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/">https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Goldman Sachs Research hyperscaler capex projections, reported via Yahoo Finance (Jun 2026): combined $5.3T FY2025–FY2030 for the four largest hyperscalers. <a href="https://finance.yahoo.com/sectors/technology/article/meta-microsoft-amazon-and-alphabet-are-about-to-spend-a-shocking-amount-of-money-to-dominate-the-ai-era-115359575.html">https://finance.yahoo.com/sectors/technology/article/meta-microsoft-amazon-and-alphabet-are-about-to-spend-a-shocking-amount-of-money-to-dominate-the-ai-era-115359575.html</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>IEA, &ldquo;Data centre electricity use surged in 2025&hellip;&rdquo; (news release, 2026). <a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions">https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>IEA, &ldquo;Key Questions on Energy and AI — Executive Summary&rdquo; (2026): 485 TWh (2025) → ~950 TWh (2030), ~3% of global demand. <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>BIS Bulletin No. 120, &ldquo;Financing the AI boom: from cash flows to debt&rdquo; (Jan 7, 2026). <a href="https://www.bis.org/publ/bisbull120.htm">https://www.bis.org/publ/bisbull120.htm</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref3:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref4:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref5:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref6:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref7:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref8:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref9:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref10:7" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref11:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>Epoch AI, &ldquo;Anthropic could surpass OpenAI in annualized revenue by mid-2026&rdquo; (Feb 19, 2026). <a href="https://epoch.ai/data-insights/anthropic-openai-revenue">https://epoch.ai/data-insights/anthropic-openai-revenue</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>Reported model-layer run-rate figures (Anthropic Series H disclosure via CNBC; The Information; SaaStr; Value Add VC tracking, Feb–Jul 2026): Anthropic annualized run-rate ~$30B (Apr 2026) and ~$47B (May 2026); OpenAI ~$25B (early 2026). Run rates are annualized projections, not booked revenue, and secondary-source figures vary; the essay uses them only at order-of-magnitude precision.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref3:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref4:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref5:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p>Financial Times (via secondary reporting), OpenAI leaked audited 2025 financials: ~$13.07B booked 2025 revenue, ~$20.9B operating loss; OpenAI 2026 funding round with Amazon, NVIDIA, SoftBank participation.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref3:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p>BIS Quarterly Review, &ldquo;Financing the AI infrastructure boom: on- and off-balance sheet borrowing&rdquo; (Mar 16, 2026): &gt;$100B hyperscaler bond issuance in 2025; SPV/JV lease and offtake structures; CDS spread widening; guarantee/refinancing transmission channels. <a href="https://www.bis.org/publ/qtrpdf/r_qt2603u.htm">https://www.bis.org/publ/qtrpdf/r_qt2603u.htm</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref2:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref3:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref4:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref5:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref6:11" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref7:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p>NVIDIA financial results: FY2026 (ended Jan 25, 2026) revenue $215.9B (+65%), Q4 FY26 revenue $68.1B with Data Center $62.3B and GAAP gross margin 75.0%; Q1 FY27 (ended Apr 26, 2026) revenue $81.6B with Data Center $75.2B (compute $60.4B; networking $14.8B, +199% YoY) and GAAP gross margin 74.9%; Q2 FY27 revenue guided to $91B. <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026">https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026</a> ; <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027">https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref3:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref4:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref5:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p>TSMC Q2 2026 results (Jul 16, 2026): revenue US$40.20B, gross margin 67.7%, operating margin 60.3%; 2026 capex raised to US$60–64B; full-year 2026 USD revenue growth guided above 40%. <a href="https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000451/a2q26presentatione.htm">https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000451/a2q26presentatione.htm</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref3:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref4:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref5:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref6:13" title="Jump back to footnote 13 in the text">↩</a><a class="footnote-backref" href="#fnref7:13" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+<li id="fn:14">
+<p>CNBC (Feb 2026): hyperscaler free-cash-flow compression; Amazon FCF projected negative for 2026. <a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html">https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">↩</a><a class="footnote-backref" href="#fnref2:14" title="Jump back to footnote 14 in the text">↩</a><a class="footnote-backref" href="#fnref3:14" title="Jump back to footnote 14 in the text">↩</a></p>
+</li>
+<li id="fn:15">
+<p>BIS reporting via TheStreet (Jun 2026): hyperscaler free cash flow recently lagging capex in absolute dollar terms; CDS spreads rising. <a href="https://www.thestreet.com/economy/bis-annual-economic-report-ai-financial-instability">https://www.thestreet.com/economy/bis-annual-economic-report-ai-financial-instability</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">↩</a><a class="footnote-backref" href="#fnref2:15" title="Jump back to footnote 15 in the text">↩</a></p>
+</li>
+<li id="fn:16">
+<p>TSMC Q1 2026 earnings release (Apr 16, 2026): advanced technologies (7nm and below) 74% of wafer revenue; GM 66.2%, OM 58.1%. <a href="https://investor.tsmc.com/">https://investor.tsmc.com/</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">↩</a></p>
+</li>
+<li id="fn:17">
+<p>TSMC Q2 2026 earnings call (Jul 2026): additional ~$100B US investment; overseas-fab gross-margin dilution guided at 2–3ppts early, 3–4ppts later.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">↩</a><a class="footnote-backref" href="#fnref2:17" title="Jump back to footnote 17 in the text">↩</a><a class="footnote-backref" href="#fnref3:17" title="Jump back to footnote 17 in the text">↩</a></p>
+</li>
+<li id="fn:18">
+<p>Moody&rsquo;s estimate of ~$662B in hyperscaler signed-but-not-yet-commenced data-center lease commitments, as reported in coverage of BIS systemic-risk analysis (Jul 2026).&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">↩</a><a class="footnote-backref" href="#fnref2:18" title="Jump back to footnote 18 in the text">↩</a></p>
+</li>
+<li id="fn:19">
+<p>Goldman Sachs Global Economics Analyst, reported by Investing.com (May 12, 2026): ~$150B/yr current US labor costs tied to AI transition; $800–900B projected workforce-reorganization cost over the adoption cycle; AI-agent-related investment projected to exceed $1T globally.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">↩</a></p>
+</li>
+<li id="fn:20">
+<p>Wall Street Journal financial projections reported via SaaStr/The AI Corner (2026): OpenAI training/compute spending toward ~$125B/yr by 2030 vs. Anthropic ~$30B; treated as reported projections, not verified filings.&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">↩</a></p>
+</li>
+<li id="fn:21">
+<p>IEA, &ldquo;Key Questions on Energy and AI&rdquo; (2026): efficiency per AI task improving at unprecedented rate; tightening supply chains for turbines, transformers, chips; onsite gas generation and grid-connection constraints. <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary</a>&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref2:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref3:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref4:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref5:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref6:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref7:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref8:21" title="Jump back to footnote 21 in the text">↩</a><a class="footnote-backref" href="#fnref9:21" title="Jump back to footnote 21 in the text">↩</a></p>
+</li>
+<li id="fn:22">
+<p>Goldman Sachs Research, &ldquo;AI Investment Is Shifting as Inference, Enterprise Adoption Accelerate&rdquo; (Jul 2026). <a href="https://www.goldmansachs.com/insights/articles/ai-investment-is-shifting-as-inference-enterprise-adoption-accelerate">https://www.goldmansachs.com/insights/articles/ai-investment-is-shifting-as-inference-enterprise-adoption-accelerate</a>&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">↩</a><a class="footnote-backref" href="#fnref2:22" title="Jump back to footnote 22 in the text">↩</a><a class="footnote-backref" href="#fnref3:22" title="Jump back to footnote 22 in the text">↩</a></p>
+</li>
+<li id="fn:23">
+<p>IEA, &ldquo;Energy and AI — Executive Summary&rdquo; (2025): US data centers to exceed combined electricity use of aluminum, steel, cement, chemicals production by 2030; US largest share of demand growth, China second. <a href="https://www.iea.org/reports/energy-and-ai/executive-summary">https://www.iea.org/reports/energy-and-ai/executive-summary</a>&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">↩</a><a class="footnote-backref" href="#fnref2:23" title="Jump back to footnote 23 in the text">↩</a></p>
+</li>
+<li id="fn:24">
+<p>IEA, &ldquo;Energy and AI — Energy supply for AI&rdquo;: generation supplying data centres 460 TWh (2024) → &gt;1,000 TWh (2030) → ~1,300 TWh (2035), Base Case; regional grid-mix detail. <a href="https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai">https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai</a>&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">↩</a><a class="footnote-backref" href="#fnref2:24" title="Jump back to footnote 24 in the text">↩</a></p>
+</li>
+<li id="fn:25">
+<p>Goldman Sachs Research (Aug 2026): US AI investment share of GDP 1.8% (2026) → 2.5% (2027) → 2.8% (2028); within ranges of prior general-purpose-technology buildouts.&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">↩</a><a class="footnote-backref" href="#fnref2:25" title="Jump back to footnote 25 in the text">↩</a></p>
+</li>
+<li id="fn:26">
+<p>BIS data and estimates as reported (2026): private-credit originations to AI-related companies &gt;$40B in 2025 (~5× jump); projected $300–600B outstanding by 2030; policy concern regarding non-bank channels. <a href="https://www.bis.org/publ/bisbull120.htm">https://www.bis.org/publ/bisbull120.htm</a>&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">↩</a><a class="footnote-backref" href="#fnref2:26" title="Jump back to footnote 26 in the text">↩</a><a class="footnote-backref" href="#fnref3:26" title="Jump back to footnote 26 in the text">↩</a><a class="footnote-backref" href="#fnref4:26" title="Jump back to footnote 26 in the text">↩</a><a class="footnote-backref" href="#fnref5:26" title="Jump back to footnote 26 in the text">↩</a></p>
+</li>
+<li id="fn:27">
+<p>BIS Annual Economic Report 2026 coverage: circular-financing structures (supplier equity stakes paired with compute purchase commitments) flagged as amplifying risk.&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">↩</a></p>
+</li>
+<li id="fn:28">
+<p>Broadcom SEC filing and reporting (2026): Anthropic–Google–Broadcom agreement for ~3.5 GW of next-generation TPU capacity from 2027, atop ~1 GW of Google compute committed for 2026; Broadcom AI revenue ~$10.8B in a recent quarter; CEO projection of &gt;$100B AI chip revenue by 2027.&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">↩</a><a class="footnote-backref" href="#fnref2:28" title="Jump back to footnote 28 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var content = document.querySelector('[data-toc-contents]');
+  var tocList = document.querySelector('[data-toc-list]');
+  if (!content || !tocList) return;
+
+  var headings = content.querySelectorAll('h2');
+  if (headings.length === 0) {
+    document.querySelector('[data-toc]').style.display = 'none';
+    return;
+  }
+
+  var headingMap = [];
+
+  headings.forEach(function (heading) {
+    var headingText = heading.textContent.trim();
+    var headingId = headingText.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    heading.id = headingId;
+
+    var li = document.createElement('li');
+    var link = document.createElement('a');
+    link.href = '#' + headingId;
+    link.textContent = headingText;
+    link.classList.add('toc-link');
+    li.appendChild(link);
+    tocList.appendChild(li);
+
+    headingMap.push({ heading: heading, link: link });
+  });
+
+  function highlightActiveHeading() {
+    var scrollOffset = 120;
+    var scrollPosition = window.scrollY + scrollOffset;
+
+    headingMap.forEach(function (item) {
+      item.link.classList.remove('cc-active');
+    });
+
+    var currentHeadingIndex = 0; // Section I is active from the very start
+    headingMap.forEach(function (item, index) {
+      var headingPosition = item.heading.getBoundingClientRect().top + window.scrollY;
+      if (headingPosition <= scrollPosition) {
+        currentHeadingIndex = index;
+      }
+    });
+
+    headingMap[currentHeadingIndex].link.classList.add('cc-active');
+  }
+
+  highlightActiveHeading();
+  window.addEventListener('scroll', highlightActiveHeading, { passive: true });
+});
+</script>
+
+</body>
+</html>
